@@ -27,25 +27,35 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     //same as above but for password
     $password = se($_POST, "password", "", false);
     //TODO 3: validate/use
-    $errors = [];
+    
+    $hasErrors = false;
     if (empty($email)) {
-        array_push($errors, "Email must be set");
+        flash("Email must be set","warning");
+        $hasErrors = true;
     }
     //sanitize
     $email = sanitize_email($email);
     //validate
     if (!is_valid_email($email)) {
-        array_push($errors, "Invalid email address");
+        flash("Invalid email address","warning");
+        $hasErrors = true;
     }
     if (empty($password)) {
-        array_push($errors, "Password must be set");
+        flash("Password must be set");
+        $hasErrors = true;
     }
-    if (strlen($password) < 8) {
-        array_push($errors, "Password must be 8 or more characters");
+    if (strlen($password) < 8) 
+    {
+        flash("Password must be 8 or more characters","warning");
+        $hasErrors = true;
     }
-    if (count($errors) > 0) {
-        echo "<pre>" . var_export($errors, true) . "</pre>";
-    } else {
+    if($hasErrors)
+    {
+        //Nothing to output here, flash will do it
+        //can likely flip the if condition
+        //echo "<pre>" . var_export($errors, true) . "</pre>";
+    }
+    else {
         //TODO 4
         $db = getDB();
         $stmt = $db->prepare("SELECT email, password from Users where email = :email");
@@ -61,15 +71,17 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                         $_SESSION["user"] = $user;
                         die(header("Location:home.php"));
                     } else {
-                        echo "Invalid password";
+                        flash("Invalid password","danger");
                     }
                 } else {
-                    echo "Invalid email";
+                    flash("Email not found","danger");
                 }
             }
         } catch (Exception $e) {
-            echo "<pre>" . var_export($e, true) . "</pre>";
+            //echo "<pre>" . var_export($e, true) . "</pre>";
+            flash(var_export($e,true));
         }
     }
 }
+require(__DIR__."/../../partials/flash.php");
 ?>

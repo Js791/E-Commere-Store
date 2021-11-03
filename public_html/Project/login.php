@@ -18,11 +18,13 @@ require(__DIR__ . "/../../partials/nav.php"); ?>
         //ensure it returns false for an error and true for success
          let email = document.getElementsByName("email")[0].value;
          const error = document.getElementById("error");
+         const password = document.getElementsByName("password")[0].value;
          let errors = [];
 
-
-            
-            
+            if(password.length < 8 )
+            {
+                errors.push("password to short");
+            }
             if(email == '' || email == null) 
             {
                 errors.push("Email must not be empty");

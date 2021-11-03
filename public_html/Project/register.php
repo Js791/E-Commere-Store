@@ -5,28 +5,72 @@ reset_session();
 <form onsubmit="return validate(this)" method="POST">
     <div>
         <label for="email">Email</label>
-        <input type="email" name="email" required />
+        <input type="text" name="email"/>
     </div>
     <div>
         <label for="username">Username</label>
-        <input type="text" name="username" required maxlength="30" />
+        <input type="text" name="username"  />
     </div>
     <div>
         <label for="pw">Password</label>
-        <input type="password" id="pw" name="password" required minlength="8" />
+        <input type="password" id="pw" name="password"/>
     </div>
     <div>
         <label for="confirm">Confirm</label>
-        <input type="password" name="confirm" required minlength="8" />
+        <input type="password" id ="cd" name="confirm"/>
     </div>
-    <input type="submit" value="Register" />
+    <input type="submit" value="Register"/>
 </form>
+<div id ="E"></div>
 <script>
-    function validate(form) {
+    function validate(form) 
+    {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
+         let email = document.getElementsByName("email")[0].value;
+         const error = document.getElementById("E");
+         let username = document.getElementsByName("username")[0].value;
+         let password = document.getElementById("pw").value;
+         let confirm = document.getElementById("cd").value;
+         let errors = [];
 
-        return true;
+            if(password.length < 8 )
+            {
+                errors.push("password too short");
+            }
+
+            if((password !== confirm) || (password.length != confirm.length))
+            {
+                errors.push("Passwords dont match");
+            }
+
+            if(email == '' || email == null)
+            {
+                errors.push("Email must not be empty");
+            }
+
+            if(!(email.includes("@")))
+            {
+                errors.push("Not a valid email");
+            }
+
+            if(!(/^([a-zA-Z\d\.-]+)@([a-z\d]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/.test(email)))
+            {   
+                    errors.push("Email is not in the correct form");
+            }
+
+            if(!(/^[a-z0-9_-]{3,30}$/i.test(username)))
+            {
+                errors.push("Not a valid username");
+            }
+            
+            if(errors.length != 0)
+            {
+                error.innerText = errors.join(', ');
+                return false;
+            }
+
+            return true;
     }
 </script>
 <?php

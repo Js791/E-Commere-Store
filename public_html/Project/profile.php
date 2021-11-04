@@ -100,6 +100,7 @@ $username = get_username();
 <div id="e"></div>
 <script>
     function validate(form) {
+        let cpw= form.currentPassword.value;
         let pw = form.newPassword.value;
         let con = form.confirmPassword.value;
         let error = document.getElementById("e");
@@ -126,6 +127,13 @@ $username = get_username();
             flash.appendChild(outerDiv);*/
             errors.push("new and confirm password sections dont match");
             error.innerText = errors.join(', ');
+            isValid = false;
+        }
+
+        if(cpw.trim().length() == 0)
+        {
+            erros.push("Current password doesnt exist");
+            error.innerText = error.join(', ');
             isValid = false;
         }
 

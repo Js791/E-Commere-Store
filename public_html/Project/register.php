@@ -39,7 +39,7 @@ reset_session();
                 errors.push("password too short");
             }
 
-            if((password !== confirm) || (password.length != confirm.length))
+            if((password !== confirm) || (password.length !== confirm.length))
             {
                 errors.push("Passwords dont match");
             }

@@ -24,9 +24,9 @@
 
  Milestone Features:
 	Milestone 1:
-  -  [x] (mm/dd/yyyy of completion) User will be able to register a new account
+  -  [x] (11/08/2021 of completion) User will be able to register a new account
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
+        - Status: Completed
        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
        - Pull Requests
          - PR link #1 (repeat as necessary)

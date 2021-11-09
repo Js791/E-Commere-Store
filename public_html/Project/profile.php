@@ -97,17 +97,21 @@ $username = get_username();
     </div>
     <input type="submit" value="Update Profile" name="save" />
 </form>
-
+<div id="e"></div>
 <script>
     function validate(form) {
+        let cpw= form.currentPassword.value;
         let pw = form.newPassword.value;
         let con = form.confirmPassword.value;
+        let error = document.getElementById("e");
+        let errors = [];
         let isValid = true;
         //TODO add other client side validation....
 
         //example of using flash via javascript
         //find the flash container, create a new element, appendChild
-        if (pw !== con) {
+        if (pw !== con) 
+        {
             //find the container
             /*let flash = document.getElementById("flash");
             //create a div (or whatever wrapper we want)
@@ -121,9 +125,18 @@ $username = get_username();
             outerDiv.appendChild(innerDiv);
             //add the element to the DOM (if we don't it merely exists in memory)
             flash.appendChild(outerDiv);*/
-            flash("Password and Confirm password must match", "warning");
+            errors.push("new and confirm password sections dont match");
+            error.innerText = errors.join(', ');
             isValid = false;
         }
+
+        if(cpw.trim().length() != 0)
+        {
+            erros.push("Current password doesnt exist");
+            error.innerText = error.join(', ');
+            isValid = false;
+        }
+
         return isValid;
     }
 </script>

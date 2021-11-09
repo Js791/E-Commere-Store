@@ -130,7 +130,7 @@ $username = get_username();
             isValid = false;
         }
 
-        if(cpw.trim().length() == 0)
+        if(cpw.trim().length() != 0)
         {
             erros.push("Current password doesnt exist");
             error.innerText = error.join(', ');

@@ -40,7 +40,15 @@ $username = se($_POST,"username","",false);
 
             if(password.length < 8 )
             {
-                errors.push("password too short");
+                if(password == null || password =='')
+                {
+                    errors.push("passsword must be filled out");
+                }
+                else
+                {
+                    errors.push("password too short");
+                }
+               
             }
 
             if((password !== confirm) || (password.length !== confirm.length))

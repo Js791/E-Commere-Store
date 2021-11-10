@@ -128,6 +128,7 @@ $username = get_username();
             errors.push("new and confirm password sections dont match");
             error.innerText = errors.join(', ');
             isValid = false;
+            return isValid;
         }
 
         if(cpw.trim().length() != 0)
@@ -135,6 +136,7 @@ $username = get_username();
             erros.push("Current password doesnt exist");
             error.innerText = error.join(', ');
             isValid = false;
+            return isValid;
         }
 
         return isValid;

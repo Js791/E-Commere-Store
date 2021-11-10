@@ -24,14 +24,30 @@
 
  Milestone Features:
 	Milestone 1:
-  -  [x] (11/08/2021 of completion) User will be able to register a new account
+  -  [x] (11/08/2021) User will be able to register a new account
         -  List of Evidence of Feature Completion
         - Status: Completed
        - Direct Link: https://js79-prod.herokuapp.com/Project/register.php
-         - PR link #1: https://github.com/Js791/IT202-007/pull/32
+       - Pull Requests: https://github.com/Js791/IT202-007/pull/32
+         - PR link #1 (repeat as necessary) 
        - Screenshots
-         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
+            - 	Showing a successful registration.
+            - 	![Screenshot (20)](https://user-images.githubusercontent.com/90228698/141027716-be73ddca-2f39-42d4-a4e7-aaeb86783797.png)
+            	<br></br>
+	    -	This shows confirming password match, email validation,also checking password length.
+            - 	![Screenshot (17)](https://user-images.githubusercontent.com/90228698/141026703-51d79856-8c16-4e85-8162-02a0316f2716.png)
+            	<br></br>
+	    -	This shows username is validated on client side,along with requiring a username.
+            -	![Screenshot (19)](https://user-images.githubusercontent.com/90228698/141026969-d971ce2a-ca71-4008-8066-716ad116c737.png)
+            	<br></br>
+	    -	This shows the UsersTable, showing all the required fields asked for along with hashed password values, also code is next screenshot after the one below showing the requirements.
+	    -	![Screenshot (21)](https://user-images.githubusercontent.com/90228698/141028934-430b2f9b-1584-455e-9bf8-546bf0f6534f.png)
+	    -	![Screenshot (22)](https://user-images.githubusercontent.com/90228698/141028972-b9301773-c0ad-421a-9604-ddab3e4a4408.png)
+	    	<br></br>
+	    -	The screenshots below show non-wiping of form fields if taken username or email is used to register.
+	    -	![Screenshot (26)](https://user-images.githubusercontent.com/90228698/141035544-69cc5685-a96b-41e4-8c09-de78ce13646d.png)
+	    -	![Screenshot (27)](https://user-images.githubusercontent.com/90228698/141035829-a45c45d9-c835-4817-b5fc-a239c5462f87.png)
+
             <br></br>
        - Form Fields
          - [x] Username, email, password, confirm password (other fields optional)
@@ -46,15 +62,19 @@
        - System should let user know if username or email is taken and allow  the user to correct the error without wiping/clearing the form
           - [x] The only fields that may be cleared are the password fields.
           <br></br>
--   [x] (mm/dd/yyyy of completion) User will be able to login to their account (given they enter the correct credentials)
+-   [x] (11/08/2021) User will be able to login to their account (given they enter the correct credentials)
       -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
+    - Status: Completed
+    - Direct Link: https://js79-prod.herokuapp.com/Project/login.php
+    - Pull Requests:https://github.com/Js791/IT202-007/pull/33
     - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+        - This is showing successful login with username or password,also shows user being redirected to homepage with some of the user's attributes.
+        - ![Screenshot (28)](https://user-images.githubusercontent.com/90228698/141036715-bc2e5e25-2bda-45cd-b67c-382a931f7909.png)
+        <br></br>
+	- This screenshot shows nonexistant email/username and password not matching.
+	- ![Screenshot (29)](https://user-images.githubusercontent.com/90228698/141041499-13632a04-3b7c-4a9e-815a-f7ffb44f1b3c.png)
+	- ![Screenshot (30)](https://user-images.githubusercontent.com/90228698/141041511-43afede0-705a-4ee5-a3d9-49cd690c2141.png)
+
      - Form
         - [x] User can login with email or username
           - This can be done as a single field or as two separate fields
@@ -65,94 +85,100 @@
         - [x] This is a protected page (non-logged in users shouldn’t have access)
         - [x] This can be home, profile, a dashboard, etc.
         <br></br>
- -  [x] (mm/dd/yyyy of completion) User will be able to logout
+ -  [x] (11/08/2021) User will be able to logout
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
-       - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-       - Pull Requests
-         - PR link #1 (repeat as necessary)
+        - Status: Completed
+       - Direct Link: https://js79-prod.herokuapp.com/Project/login.php
+       - Pull Requests:https://github.com/Js791/IT202-007/pull/35
        - Screenshots
-         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show<br></br>
+         - This photo shows the code redirecting the user back to login page.
+         - ![Screenshot (32)](https://user-images.githubusercontent.com/90228698/141057967-6fae471c-9a16-475e-badc-9fa3f8296fa4.png)
+         <br></br>
+         - This screenshot shows a successful logout with a message.
+         - ![Screenshot (35)](https://user-images.githubusercontent.com/90228698/141061847-8d6a41a6-32a2-43fa-bcd5-8f3bab9ea42c.png)
+
+
      - Logging out will redirect to login page
      - User should see a message that they’ve successfully logged out
      - Session should be destroyed (so the back button doesn’t allow them access back in)
      <br></br>
--  [x] (mm/dd/yyyy of completion) Basic Security rules implemented
+-  [x] (11/08/2021) Basic Security rules implemented
      - List of Evidence of Feature Completion
-      - Status: Pending (Completed, Partially working, Incomplete, Pending)
-      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-       - Pull Requests
-         - PR link #1 (repeat as necessary)
+      - Status: Completed
+      - Direct Link: https://js79-prod.herokuapp.com/Project/profile.php
+       - Pull Requests:https://github.com/Js791/IT202-007/pull/35
       - Screenshots
-         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
-            <br></br>
+         - Demostrating how is_logged_in function operates on certain pages.
+         - ![Screenshot (36)](https://user-images.githubusercontent.com/90228698/141064298-c5bd0ddb-7762-4fc9-bedb-70604092b5c0.png)
+         <br></br>
+         - code showing function logic
+         - ![Screenshot (37)](https://user-images.githubusercontent.com/90228698/141064489-3cd9a033-9a5f-44fe-8fa8-aa4e9d345534.png)
      - Authentication:
        - [x] Function to check if user is logged in
        - [x] Function should be called on appropriate pages that only allow logged in users
       <br></br>
--  [x] (mm/dd/yyyy of completion) Basic roles implemented
-     - List of Evidence of Feature Completion
-      - Status: Pending (Completed, Partially working, Incomplete, Pending)
-      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-       - Pull Requests
-         - PR link #1 (repeat as necessary)
+-  [x] (11/08/2021) Basic roles implemented
+     - List of Evidence of Feature Completion 
+      - Status: Completed
+      - Direct Link:http://js79-prod.herokuapp.com/Project/login.php
+       - Pull Requests: https://github.com/Js791/IT202-007/pull/35
       - Screenshots
-         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show  
+         - Screenshots below showing User Roles Table, Roles Table, and a has_role function to check role of user, also showing a user is a Admin, and their abilities to assign roles and list them.
+         - ![Screenshot (39)](https://user-images.githubusercontent.com/90228698/141066261-1bed6fa5-14f8-4af3-9372-b7a2e0305ce6.png)
+         - ![Screenshot (40)](https://user-images.githubusercontent.com/90228698/141066286-938f5fe0-ba9d-4faa-9d21-3b1c08e801e5.png)
+         - ![Screenshot (41)](https://user-images.githubusercontent.com/90228698/141066300-eafadf59-724d-47fd-891d-3f9efde4d2dd.png)
+         - ![Screenshot (42)](https://user-images.githubusercontent.com/90228698/141066545-223be9ba-17a4-4b05-8835-87895f432325.png)
+
      - Roles/Authorization:
        - [x] Have a roles table (see below)
         <br></br>
-    - Have a Roles table	(id, name, description, is_active, modified, created)
+    - Have a Roles table(id, name, description, is_active, modified, created)
     - Have a User Roles table (id, user_id, role_id, is_active, created, modified)
     - Include a function to check if a user has a specific role (we won’t use it for this milestone but it should be usable in the future)
     <br></br>
--  [x] (mm/dd/yyyy of completion) Site should have basic styles/theme applied; everything should be styled.
+-  [x] (11/08/2021) Site should have basic styles/theme applied; everything should be styled.
      - List of Evidence of Feature Completion
-      - Status: Pending (Completed, Partially working, Incomplete, Pending)
-      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-       - Pull Requests
-         - PR link #1 (repeat as necessary)
+      - Status:Compeleted
+      - Direct Link:https://js79-prod.herokuapp.com/Project/profile.php
+       - Pull Requests: https://github.com/Js791/IT202-007/pull/35
       - Screenshots
-         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
-            <br></br>  
+         - This screenshot shows the styling of the page, I will add bootstrap to this project later.
+         - ![Screenshot (43)](https://user-images.githubusercontent.com/90228698/141066920-d6d897c7-e4ea-448e-a695-7f3c61ea882a.png)
      - I.e., forms/input, navigation bar, etc
   <br></br>
--   [x] (mm/dd/yyyy of completion)Any output messages/errors should be "user friendly"
+-   [x] (11/08/2021)Any output messages/errors should be "user friendly"
      - List of Evidence of Feature Completion
-      - Status: Pending (Completed, Partially working, Incomplete, Pending)
-      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-       - Pull Requests
-         - PR link #1 (repeat as necessary)
+      - Status: Completed
+      - Direct Link: https://js79-prod.herokuapp.com/Project/register.php
+       - Pull Requests: https://github.com/Js791/IT202-007/pull/38
       - Screenshots
-         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
+         - The screenshots below show the client-side validation of register,login,and profie page(I had to remove required attribute in form elements to show validation)
+         - ![Screenshot (44)](https://user-images.githubusercontent.com/90228698/141175206-edbbb56d-4f02-4a90-ba1d-77ec208c9ada.png)
+         - ![Screenshot (45)](https://user-images.githubusercontent.com/90228698/141176680-02813038-79a7-45ac-8206-af150595d4d9.png)
+         - ![Screenshot (46)](https://user-images.githubusercontent.com/90228698/141178177-2520e8ce-6cc4-4f3c-962b-d35820c71776.png)
             <br></br>  
       - Any technical errors or debug output displayed will result in a loss of points
       <br></br>
--   [x] (mm/dd/yyyy of completion) User will be able to see their profile
+-   [x] (11/08/2021) User will be able to see their profile
      - List of Evidence of Feature Completion
-      - Status: Pending (Completed, Partially working, Incomplete, Pending)
-      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-       - Pull Requests
-         - PR link #1 (repeat as necessary)
+      - Status: Completed
+      - Direct Link: https://js79-prod.herokuapp.com/Project/profile.php
+       - Pull Requests: https://github.com/Js791/IT202-007/pull/38
       - Screenshots
-         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
+         - this screenshot shows the window of the user's profile.
+         - ![Screenshot (51)](https://user-images.githubusercontent.com/90228698/141183994-b8a32381-b731-499f-84db-bd98d771ef87.png)
             <br></br>
       - Email, username, etc
       <br></br>
--   [x] (mm/dd/yyyy of completion) User will be able to edit their profile
+-   [x] (11/09/2021) User will be able to edit their profile
      - List of Evidence of Feature Completion
-      - Status: Pending (Completed, Partially working, Incomplete, Pending)
-      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-       - Pull Requests
-         - PR link #1 (repeat as necessary)
+      - Status:Completed
+      - Direct Link:https://js79-prod.herokuapp.com/Project/profile.php
+       - Pull Requests:https://github.com/Js791/IT202-007/pull/38
       - Screenshots
-         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show 
+         - Screenshots showing a password reset, a message showing a taken username/email,current password validation.
+         - ![Screenshot (49)](https://user-images.githubusercontent.com/90228698/141181390-b574bbb1-9245-47c2-9976-931fe26a1946.png)
+         - ![Screenshot (48)](https://user-images.githubusercontent.com/90228698/141181475-6f9a6717-b184-4100-82f8-db4c80833ac9.png)
             <br></br>
     - Changing username/email should properly check to see if it’s available before allowing the change
     - Any other fields should be properly validated

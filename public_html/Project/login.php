@@ -34,6 +34,7 @@ require(__DIR__ . "/../../partials/nav.php"); ?>
                 errors.push("Email must not be empty");
             }
 
+
             if(email.includes("@"))
             {
                  if(/^([a-zA-Z\d\.-]+)@([a-z\d]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/.test(email))

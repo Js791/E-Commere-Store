@@ -185,7 +185,131 @@
     - Allow password reset (only if the existing correct password is provided)
       - [x] Hint: logic for the password check would be similar to login
   
-- Milestone 2
+Milestone Features:
+	Milestone 2
+  - [ ] (mm/dd/yyyy of completion) User with an admin role or shop owner role will be able to add products to inventory 	
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+    - Table should be called Products (id, name, description, category, stock, created, modified, unit_price, visibility [true, false])
+    		 <br></br>
+  - [ ] (mm/dd/yyyy of completion) Any user will be able to see products with visibility = true on the Shop page 	
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+    - Product list page will be public (i.e. doesn’t require login)
+    - For now limit results to 10 most recent
+    - User will be able to filter results by category
+    - User will be able to filter results by partial matches on the name
+    - User will be able to sort results by price
+    <br></br>
+  - [ ] (mm/dd/yyyy of completion) Admin/Shop owner will be able to see products with any visibility
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+     - This should be a separate page from Shop, but will be similar
+     - This page should only be accessible to the appropriate role(s)
+     <br></br>
+  - [ ] (mm/dd/yyyy of completion) Admin/Shop owner will be able to edit any product
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+     - Edit button should be accessible for the appropriate role(s) anywhere a product is shown (Shop list, Product Details Page, etc)
+     <br></br>
+  - [ ] (mm/dd/yyyy of completion) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+  - [ ] (mm/dd/yyyy of completion) User must be logged in for any Cart related activity below
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+  - [ ] (mm/dd/yyyy of completion) User will be able to add items to Cart
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+     - <u>Cart</u> will be table-based (id, product_id, user_id, desired_quantity, unit_cost, created, modified)
+     - Adding items to Cart will <strong>not</strong> affect the Product's quantity in the Products table
+     <br></br>
+  - [ ] (mm/dd/yyyy of completion) User will be able to see their cart
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+     - List all the items
+     - Show subtotal for each line item based on desired_quantity * unit_cost
+     - Show total cart value (sum of line item subtotals)
+     - Will be able to click an item to see more details (Product Details Page)
+     <br></br>
+  - [ ] (mm/dd/yyyy of completion) User will be able to change quantity of items in their cart
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+     - Quantity of 0 should also remove from cart
+     <br></br>
+  - [ ] (mm/dd/yyyy of completion) User will be able to remove a single item from their cart via button click
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+  - [ ] (mm/dd/yyyy of completion) User will be able to clear their entire cart via a button click
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+
 - Milestone 3
 - Milestone 4
 ### Intructions

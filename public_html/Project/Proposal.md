@@ -27,9 +27,8 @@
   -  [x] (11/08/2021 of completion) User will be able to register a new account
         -  List of Evidence of Feature Completion
         - Status: Completed
-       - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-       - Pull Requests
-         - PR link #1 (repeat as necessary)
+       - Direct Link: https://js79-prod.herokuapp.com/Project/register.php
+         - PR link #1: https://github.com/Js791/IT202-007/pull/32
        - Screenshots
          - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
             - Screenshot #1 description explaining what you're trying to show

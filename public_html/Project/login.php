@@ -7,7 +7,7 @@ require(__DIR__ . "/../../partials/nav.php"); ?>
     </div>
     <div>
         <label for="pw">Password</label>
-        <input type="password" id="pw" name="password" required minlength="8" />
+        <input type="password" id="pw" name="password" />
     </div>
     <input type="submit" value="Login" />
 </form>
@@ -21,6 +21,10 @@ require(__DIR__ . "/../../partials/nav.php"); ?>
          const password = document.getElementsByName("password")[0].value;
          let errors = [];
 
+            if (password == '' || password == null)
+            {
+                errors.push("password must inputted");
+            }
             if(password.length < 8 )
             {
                 errors.push("password to short");

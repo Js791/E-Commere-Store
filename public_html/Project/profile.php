@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . "/../../partials/nav.php");
-is_logged_in(true);
+is_logged_in(true); //function for branch
 ?>
 <?php
 if (isset($_POST["save"])) {

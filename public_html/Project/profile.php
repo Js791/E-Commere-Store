@@ -143,6 +143,7 @@ $username = get_username();
     }
 
     //profile viewing
+    //l
 </script>
 <?php
 require_once(__DIR__ . "/../../partials/flash.php");

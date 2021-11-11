@@ -9,3 +9,4 @@ CREATE TABLE IF NOT EXISTS  `Roles`
     PRIMARY KEY (`id`)
 )
 --For branch purposes--
+--

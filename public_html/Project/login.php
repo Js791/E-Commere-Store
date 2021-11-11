@@ -1,9 +1,12 @@
 <?php
-require(__DIR__ . "/../../partials/nav.php"); ?>
+//This is for anothe pull request
+require(__DIR__ . "/../../partials/nav.php");
+$username = se($_POST,"email","",false);
+?>
 <form onsubmit="return validate(this)" method="POST">
     <div>
         <label for="email">Username/Email</label>
-        <input type="text" name="email" required />
+        <input type="text" name="email" required value=<?php se($username);?>>
     </div>
     <div>
         <label for="pw">Password</label>

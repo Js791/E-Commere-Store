@@ -12,3 +12,4 @@ CREATE TABLE IF NOT EXISTS  `UserRoles`
     UNIQUE KEY (`user_id`, `role_id`)
 )
 --for branch purposes--
+--

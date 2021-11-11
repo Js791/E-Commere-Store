@@ -28,8 +28,9 @@
         -  List of Evidence of Feature Completion
         - Status: Completed
        - Direct Link: https://js79-prod.herokuapp.com/Project/register.php
-       - Pull Requests: https://github.com/Js791/IT202-007/pull/32
-         - PR link #1 (repeat as necessary) 
+       - Pull Requests:
+         - https://github.com/Js791/IT202-007/pull/51
+         - https://github.com/Js791/IT202-007/pull/52
        - Screenshots
             - 	Showing a successful registration.
             - 	![Screenshot (20)](https://user-images.githubusercontent.com/90228698/141027716-be73ddca-2f39-42d4-a4e7-aaeb86783797.png)
@@ -66,7 +67,8 @@
       -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://js79-prod.herokuapp.com/Project/login.php
-    - Pull Requests:https://github.com/Js791/IT202-007/pull/33
+    - Pull Requests
+    	- https://github.com/Js791/IT202-007/pull/53
     - Screenshots
         - This is showing successful login with username or password,also shows user being redirected to homepage with some of the user's attributes.
         - ![Screenshot (28)](https://user-images.githubusercontent.com/90228698/141036715-bc2e5e25-2bda-45cd-b67c-382a931f7909.png)
@@ -74,6 +76,9 @@
 	- This screenshot shows nonexistant email/username and password not matching.
 	- ![Screenshot (29)](https://user-images.githubusercontent.com/90228698/141041499-13632a04-3b7c-4a9e-815a-f7ffb44f1b3c.png)
 	- ![Screenshot (30)](https://user-images.githubusercontent.com/90228698/141041511-43afede0-705a-4ee5-a3d9-49cd690c2141.png)
+	<br></br>
+	- This screenshot shows the username/email field not wiping if a incorrect submission is submitted.
+	- ![Screenshot (53)](https://user-images.githubusercontent.com/90228698/141364604-975606e7-371b-42c0-a5af-798c51aafe48.png)
 
      - Form
         - [x] User can login with email or username
@@ -89,15 +94,16 @@
         -  List of Evidence of Feature Completion
         - Status: Completed
        - Direct Link: https://js79-prod.herokuapp.com/Project/login.php
-       - Pull Requests:https://github.com/Js791/IT202-007/pull/35
+       - Pull Requests
+           - https://github.com/Js791/IT202-007/pull/53
+           - https://github.com/Js791/IT202-007/pull/55
        - Screenshots
          - This photo shows the code redirecting the user back to login page.
          - ![Screenshot (32)](https://user-images.githubusercontent.com/90228698/141057967-6fae471c-9a16-475e-badc-9fa3f8296fa4.png)
          <br></br>
          - This screenshot shows a successful logout with a message.
          - ![Screenshot (35)](https://user-images.githubusercontent.com/90228698/141061847-8d6a41a6-32a2-43fa-bcd5-8f3bab9ea42c.png)
-
-
+         <br></br>
      - Logging out will redirect to login page
      - User should see a message that they’ve successfully logged out
      - Session should be destroyed (so the back button doesn’t allow them access back in)
@@ -106,7 +112,8 @@
      - List of Evidence of Feature Completion
       - Status: Completed
       - Direct Link: https://js79-prod.herokuapp.com/Project/profile.php
-       - Pull Requests:https://github.com/Js791/IT202-007/pull/35
+      - Pull Requests
+         - https://github.com/Js791/IT202-007/pull/56    
       - Screenshots
          - Demostrating how is_logged_in function operates on certain pages.
          - ![Screenshot (36)](https://user-images.githubusercontent.com/90228698/141064298-c5bd0ddb-7762-4fc9-bedb-70604092b5c0.png)
@@ -121,7 +128,8 @@
      - List of Evidence of Feature Completion 
       - Status: Completed
       - Direct Link:http://js79-prod.herokuapp.com/Project/login.php
-       - Pull Requests: https://github.com/Js791/IT202-007/pull/35
+      - Pull Requests
+        - https://github.com/Js791/IT202-007/pull/57
       - Screenshots
          - Screenshots below showing User Roles Table, Roles Table, and a has_role function to check role of user, also showing a user is a Admin, and their abilities to assign roles and list them.
          - ![Screenshot (39)](https://user-images.githubusercontent.com/90228698/141066261-1bed6fa5-14f8-4af3-9372-b7a2e0305ce6.png)
@@ -140,7 +148,8 @@
      - List of Evidence of Feature Completion
       - Status:Compeleted
       - Direct Link:https://js79-prod.herokuapp.com/Project/profile.php
-       - Pull Requests: https://github.com/Js791/IT202-007/pull/35
+      - Pull Requests
+        - https://github.com/Js791/IT202-007/pull/58
       - Screenshots
          - This screenshot shows the styling of the page, I will add bootstrap to this project later.
          - ![Screenshot (43)](https://user-images.githubusercontent.com/90228698/141066920-d6d897c7-e4ea-448e-a695-7f3c61ea882a.png)
@@ -150,7 +159,8 @@
      - List of Evidence of Feature Completion
       - Status: Completed
       - Direct Link: https://js79-prod.herokuapp.com/Project/register.php
-       - Pull Requests: https://github.com/Js791/IT202-007/pull/38
+      - Pull Requests
+        - https://github.com/Js791/IT202-007/pull/59
       - Screenshots
          - The screenshots below show the client-side validation of register,login,and profie page(I had to remove required attribute in form elements to show validation)
          - ![Screenshot (44)](https://user-images.githubusercontent.com/90228698/141175206-edbbb56d-4f02-4a90-ba1d-77ec208c9ada.png)
@@ -163,7 +173,8 @@
      - List of Evidence of Feature Completion
       - Status: Completed
       - Direct Link: https://js79-prod.herokuapp.com/Project/profile.php
-       - Pull Requests: https://github.com/Js791/IT202-007/pull/38
+      - Pull Requests
+        - https://github.com/Js791/IT202-007/pull/60 
       - Screenshots
          - this screenshot shows the window of the user's profile.
          - ![Screenshot (51)](https://user-images.githubusercontent.com/90228698/141183994-b8a32381-b731-499f-84db-bd98d771ef87.png)
@@ -174,7 +185,9 @@
      - List of Evidence of Feature Completion
       - Status:Completed
       - Direct Link:https://js79-prod.herokuapp.com/Project/profile.php
-       - Pull Requests:https://github.com/Js791/IT202-007/pull/38
+      - Pull Requests
+        - https://github.com/Js791/IT202-007/pull/61
+        -  https://github.com/Js791/IT202-007/pull/62 (this pull request is all the files in my project in case I missed any file due to reworking branches)
       - Screenshots
          - Screenshots showing a password reset, a message showing a taken username/email,current password validation.
          - ![Screenshot (49)](https://user-images.githubusercontent.com/90228698/141181390-b574bbb1-9245-47c2-9976-931fe26a1946.png)

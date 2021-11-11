@@ -3,7 +3,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
 is_logged_in(true); //function for branch
 ?>
 <?php
-if (isset($_POST["save"])) {
+if (isset($_POST["save"])) { //updating username/email
     $email = se($_POST, "email", null, false);
     $username = se($_POST, "username", null, false);
 
@@ -16,7 +16,7 @@ if (isset($_POST["save"])) {
         users_check_duplicate($e->errorInfo);
     }
     //select fresh data from table
-    $stmt = $db->prepare("SELECT id, email, IFNULL(username, email) as `username` from Users where id = :id LIMIT 1");
+    $stmt = $db->prepare("SELECT id, email, IFNULL(username, email) as `username` from Users where id = :id LIMIT 1"); //user existance
     try {
         $stmt->execute([":id" => get_user_id()]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -34,7 +34,7 @@ if (isset($_POST["save"])) {
 
 
     //check/update password
-    $current_password = se($_POST, "currentPassword", null, false);
+    $current_password = se($_POST, "currentPassword", null, false); //function for password reset
     $new_password = se($_POST, "newPassword", null, false);
     $confirm_password = se($_POST, "confirmPassword", null, false);
     if (!empty($current_password) && !empty($new_password) && !empty($confirm_password)) {
@@ -69,7 +69,7 @@ if (isset($_POST["save"])) {
 ?>
 
 <?php
-$email = get_user_email();
+$email = get_user_email(); //no wipe from profile
 $username = get_username();
 ?>
 <form method="POST" onsubmit="return validate(this);">

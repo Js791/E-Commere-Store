@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS `Users` (
     ,PRIMARY KEY (`id`)
     ,UNIQUE (`email`)
 )
+--This is a comment for pull request Users Table--

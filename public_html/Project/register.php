@@ -1,6 +1,8 @@
+
 <?php
 require(__DIR__ . "/../../partials/nav.php");
 reset_session();
+//User registration branch
 ?>
 <?php
 $email = se($_POST,"email","",false);

@@ -29,7 +29,7 @@ $username = se($_POST,"username","",false);
 </form>
 <div id ="E"></div>
 <script>
-    function validate(form) 
+    function validate(form) //client side validation
     {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success

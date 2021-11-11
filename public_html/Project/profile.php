@@ -141,6 +141,8 @@ $username = get_username();
 
         return isValid;
     }
+
+    //profile viewing
 </script>
 <?php
 require_once(__DIR__ . "/../../partials/flash.php");

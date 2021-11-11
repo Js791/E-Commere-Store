@@ -2,7 +2,7 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
 reset_session();
-//User registration branch..
+//User registration branch...second pull request
 ?>
 <?php
 $email = se($_POST,"email","",false);

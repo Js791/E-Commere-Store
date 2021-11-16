@@ -323,7 +323,89 @@ Milestone Features:
        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
      <br></br>
 
-- Milestone 3
+Milestone Features:
+	Milestone 3
+ - [ ] (mm/dd/yyyy of completion) User will be able to purchase items in their Cart 	
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+    - Create an Orders table (id, user_id, created, total_price, address, payment_method)
+      - [ ] Payment method will simply record (Cash, Visa, MasterCard, Amex, etc) We will not be recording CC numbers or anything of that nature, this is just a sample and in real world projects you’d commonly use a third party payment processor
+      - [ ] Hint: This must be inserted first before you can insert into the OrderItems table
+      <br></br>  
+    - Create an OrderItems table (id, order_id, product_id, quantity, unit_price)
+      - [ ] Hint: This is basically a copy of the data from the Cart table, just persisted as a purchase
+      <br></br>
+    - Checkout Form
+        - [ ] Ask for payment method (Cash, Visa, MasterCard, Amex, etc)
+        - [ ] Do not ask for credit card number, this is just a sample
+        - [ ] Ask for a numerical value to be entered (this will be a fake payment check to compare against the cart total to determine if the payment succeeds)
+        - [ ] Ask for Address/shipping information
+      <br></br>
+    - User will be asked for their Address for shipping purposes
+      - [ ] Address form should validate correctly
+        - Use this as a rough guide (likely you’ll want to prefill some of the data you already have about the user)
+     <br></br>
+     - Order process:
+       - [ ] Calculate Cart Items
+       - [ ] Verify the current product price against the Products table
+         -  Since our Cart is table based it can be long lived so if a user added a Product at a sale and they attempt to purchase afterwards, it should pull the true Product cost.
+         -  You can also show the Cart.unit_price vs Product.unit_price to show a sale or an increase in price
+       <br></br>
+       - [ ] Verify desired product and desired quantity are still available in the Products table
+           - Users can’t purchase more than what’s in stock
+           - Show an error message and prevent order from going through if something isn’t available
+           - Let the user update their cart and try again
+           - Clearly show what the issue is (which product isn’t available, how much quantity is available if the cart exceeds it)
+       <br></br>
+       - [ ] Make an entry into the Orders table
+       - [ ] Get last Order ID from Orders table
+       - [ ] Copy the cart details into the OrderItems tables with the Order ID from the previous step
+       - [ ] Update the Products table Stock for each item to deduct the Ordered Quantity
+       - [ ] Clear out the user’s cart after successful order
+       - [ ] Redirect user to Order Confirmation Page
+       <br></br>
+ - [ ] (mm/dd/yyyy of completion) Order Confirmation Page 	
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+    - Show the entire order details from the Order and OrderItems table (similar to cart)
+    - Displays a Thank you message
+    <br></br>
+ - [ ] (mm/dd/yyyy of completion) User will be able to see their Purchase History	
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+    - For now limit to 10 most recent orders
+    - A list item can be clicked to view the full details in the Order Details Page (similar to Order Confirmation Page except no “Thank you” message)
+    <br></br>
+ - [ ] (mm/dd/yyyy of completion) Store Owner will be able to see all Purchase History	
+    - List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+       - PR link #1 (repeat as necessary)
+    - Screenshots
+       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+     <br></br>
+    - For now limit to 10 most recent orders
+    - A list item can be clicked to view the full details in the Order Details Page (similar to Order Confirmation Page except no “Thank you” message)
+    <br></br> 
 - Milestone 4
 ### Intructions
 #### Don't delete this

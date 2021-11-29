@@ -1,4 +1,5 @@
 <?php
+//l
 //This is for anothe pull request
 require(__DIR__ . "/../../partials/nav.php");
 $username = se($_POST,"email","",false);
@@ -24,7 +25,7 @@ $username = se($_POST,"email","",false);
          const password = document.getElementsByName("password")[0].value;
          let errors = [];
 
-            if (password == '' || password == null)
+            if (password == '' || password == null) //client side validation
             {
                 errors.push("password must inputted");
             }

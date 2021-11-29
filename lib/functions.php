@@ -1,4 +1,5 @@
-<?php
+<?php 
+//
 //user registration branch...second pull request
 require_once(__DIR__ . "/db.php");
 $BASE_PATH = '/Project/'; //This is going to be a helper for redirecting to our base project path since it's nested in another folder
@@ -37,7 +38,7 @@ function is_valid_email($email = "")
     return filter_var(trim($email), FILTER_VALIDATE_EMAIL);
 }
 //TODO 3: User Helpers
-function is_logged_in($redirect = false, $destination = "login.php")
+function is_logged_in($redirect = false, $destination = "login.php") //function for branch purposes
 {
     $isLoggedIn = isset($_SESSION["user"]);
     if ($redirect && !$isLoggedIn) {
@@ -46,7 +47,7 @@ function is_logged_in($redirect = false, $destination = "login.php")
     }
     return $isLoggedIn; //se($_SESSION, "user", false, false);
 }
-function has_role($role)
+function has_role($role)//roles function
 {
     if (is_logged_in() && isset($_SESSION["user"]["roles"])) {
         foreach ($_SESSION["user"]["roles"] as $r) {

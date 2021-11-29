@@ -8,3 +8,4 @@ CREATE TABLE IF NOT EXISTS `Users` (
     ,UNIQUE (`email`)
 )
 --This is a comment for pull request Users Table--
+--

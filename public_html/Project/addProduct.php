@@ -106,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="container-fluid">
     <h3>Add Product</h3>
     <form onsubmit="return validate(this)" method="POST">
+        <div id ="E"></div>
         <?php foreach ($form as $ele) : ?>
             <div class="mb-3">
                 <label class="form-label" for="<?php se($ele, "id"); ?>"><?php se($ele, "name", ""); ?></label>
@@ -123,7 +124,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input class="btn btn-primary" type="submit" value="Create" />
     
     </form>
-<div id ="E"></div>
 </div>
 <script>
     function validate(form)
@@ -169,13 +169,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
          if(errors.length != 0)
          {
-            error.innerText = errors.join(', ');
+            error.innerText = errors.join(' , ');
             return false;
          }
 
          return true;
     }
-
+</script>
 <?php
 require_once(__DIR__ . "/../../partials/flash.php");
 ?>

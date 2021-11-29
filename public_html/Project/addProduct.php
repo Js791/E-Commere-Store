@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         flash("unit price cannot be negative");
     }
 
-    if(empty($visibility))
+    if(empty($visible))
     {
         flash("visibility must be set");
     }

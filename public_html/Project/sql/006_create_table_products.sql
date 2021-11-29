@@ -11,4 +11,4 @@
         modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
         visibility BOOLEAN 
     )
-    ---
+    ---fixed---

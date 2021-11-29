@@ -1,23 +1,31 @@
-.alert-success {
-    background-color: green
+.alert-success 
+{
+    background-color: green;
+    font-weight: bold;
 }
 
 .alert-warning {
     background-color: yellow;
+    font-weight: bold;
 }
 
 .alert-danger {
     background-color: red;
+    font-weight: bold;
 }
 
 .alert-info {
     background-color: teal;
+    font-weight: bold;
 }
-nav li{display: inline; background-color: rebeccapurple;}
-nav li a{color: hotpink}
-input{border-radius: 50%;}
+
+.navbar
+{
+    background-color:orange !important;
+    font-weight:bold !important;
+}
 body{
-    background-color: hotpink;
-    color: rgb(153, 0, 153);
+    background-color: black;
+    color:orange;
 /*for branch purposesqq*/
 }

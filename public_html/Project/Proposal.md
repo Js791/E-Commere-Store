@@ -207,29 +207,27 @@ Milestone Features:
     - Pull Requests
        - https://github.com/Js791/IT202-007/pull/69
     - Screenshots
-       - 
-     <br></br>
-    - Table should be called Products (id, name, description, category, stock, created, modified, unit_price, visibility [true, false])
-    		 <br></br>
-  - [ ] (mm/dd/yyyy of completion) Any user will be able to see products with visibility = true on the Shop page 	
-    - List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-       - PR link #1 (repeat as necessary)
-    - Screenshots
        - Screenshots showing various validations along with product entry 	
        - ![Screenshot (87)](https://user-images.githubusercontent.com/90228698/143811628-ae6cccbc-5c56-40c8-a0de-0378877e010f.png)
        - ![Screenshot (86)](https://user-images.githubusercontent.com/90228698/143811748-7735f2b6-150a-41be-bd62-5e6a36bde085.png)
-       - ![Screenshot (88)](https://user-images.githubusercontent.com/90228698/143811826-a0582bbf-a2f5-48ed-a906-56ef662b9b4d.png)
-
-
-
-cessary)
+       - ![Screenshot (88)](https://user-images.githubusercontent.com/90228698/143811826-a0582bbf-a2f5-48ed-a906-56ef662b9b4d.png) 
+     <br></br>
+    - Table should be called Products (id, name, description, category, stock, created, modified, unit_price, visibility [true, false])
+    		 <br></br>
+  - [x] (11/29/2021) Any user will be able to see products with visibility = true on the Shop page 	
+    - List of Evidence of Feature Completion
+    - Status:Completed
+    - Direct Link: https://js79-prod.herokuapp.com/Project/shop.php
+    - Pull Requests
+       - https://github.com/Js791/IT202-007/pull/70
+    - Screenshots
+       - Screenshots showing the shop section of website, along with some items being viewed regardless if logged in or not, also some filtering/sorting capabilities
+       - ![Screenshot (99)](https://user-images.githubusercontent.com/90228698/143982936-c6adb5fd-06ee-4697-bc4c-3c7772ab5f4e.png)
+       - ![Screenshot (100)](https://user-images.githubusercontent.com/90228698/143982972-43088f3f-d346-4935-98a2-4e811e35e8cd.png)
+       - ![Screenshot (101)](https://user-images.githubusercontent.com/90228698/143982997-d196c226-a1c6-411c-b00a-743851d4e976.png)
      <br></br>
     - Product list page will be public (i.e. doesn’t require login)
-    - For now limit results to 10 most recent![Uploading Screenshot (86).png…]()
-
+    - For now limit results to 10 most recent!
     - User will be able to filter results by category
     - User will be able to filter results by partial matches on the name
     - User will be able to sort results by price

@@ -232,14 +232,17 @@ Milestone Features:
     - User will be able to filter results by partial matches on the name
     - User will be able to sort results by price
     <br></br>
-  - [ ] (mm/dd/yyyy of completion) Admin/Shop owner will be able to see products with any visibility
+  - [ ] (11/29/2021) Admin/Shop owner will be able to see products with any visibility
     - List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status:Completed
+    - Direct Link: https://js79-prod.herokuapp.com/Project/admin/list_items.php
     - Pull Requests
-       - PR link #1 (repeat as necessary)
+       - https://github.com/Js791/IT202-007/pull/71
     - Screenshots
-       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+       - These screenshots show a new list products page, along with a screenshot showing admin vs regular user, also showing the varying visibilities in the products.
+       - ![Screenshot (103)](https://user-images.githubusercontent.com/90228698/143988340-cf53d4eb-17d9-44c6-a89b-9bd278b6e30b.png)
+       - ![Screenshot (104)](https://user-images.githubusercontent.com/90228698/143988367-073ac994-dfcf-41e8-af25-d7d3165d2ae6.png)
+       - ![Screenshot (105)](https://user-images.githubusercontent.com/90228698/143988393-f67456f9-fbd4-4ecc-a018-cd70ffd03583.png)
      <br></br>
      - This should be a separate page from Shop, but will be similar
      - This page should only be accessible to the appropriate role(s)

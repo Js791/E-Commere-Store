@@ -10,6 +10,7 @@ if (!has_role("Admin")) {
 $results = [];
 if (isset($_POST["itemName"])) {
     $db = getDB();
+    //for branching
     $stmt = $db->prepare("SELECT name,id,visibility,category,unit_price,stock FROM Products WHERE(stock>=0 AND visibility>=0) AND (category LIKE :category OR name LIKE :name) LIMIT 10");
     try {
         $stmt->execute([":name" => "%" . $_POST["itemName"] . "%",":category" => "%" . $_POST["itemName"] . "%"]);

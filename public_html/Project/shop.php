@@ -1,4 +1,5 @@
 <?php
+//for branching
 require(__DIR__ . "/../../partials/nav.php");
 $results = [];
 $db = getDB();
@@ -60,7 +61,7 @@ if (isset($_POST["search"]) && !empty($_POST["search"])) {
     $sort = se($_GET,"sort","asc",false);
     if(!in_array($sort,["asc","desc"]))
     {
-        $sort = "desc";
+        $sort = "desc";//for branching
     }
     $query ="SELECT name,visibility,category,unit_price,stock FROM Products WHERE(stock>0 AND visibility>0) AND (category LIKE :category OR name LIKE :name) ORDER BY unit_price $sort LIMIT 10";
     $stmt = $db->prepare($query);

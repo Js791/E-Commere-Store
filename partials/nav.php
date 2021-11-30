@@ -38,17 +38,20 @@ require_once(__DIR__ . "/../lib/functions.php");
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <?php if (is_logged_in()) : ?>
                 <li><a class="nav-link" href="<?php echo get_url('home.php'); ?>">Home</a></li>
-                <li><a class="nav-link" href="<?php echo get_url('profile.php'); ?>">Profile</a></li> <!--Profile Viewing--> 
+                <li><a class="nav-link" href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
+                <li><a class="nav-link" href="<?php echo get_url("shop.php");?>">Shop</a></li> <!--Profile Viewing--> 
             <?php endif; ?>
             <?php if (!is_logged_in()) : ?>
                 <li><a class ="nav-link" href="<?php echo get_url('login.php'); ?>">Login</a></li>
                 <li><a class="nav-link" href="<?php echo get_url('register.php'); ?>">Register</a></li>
+                <li><a class="nav-link" href="<?php echo get_url("shop.php");?>">Shop</a></li>
             <?php endif; ?>
             <?php if (has_role("Admin")) : ?>
                 <li><a class="nav-link" href="<?php echo get_url('admin/create_role.php'); ?>">Create Role</a></li>
                 <li><a class="nav-link" href="<?php echo get_url('admin/list_roles.php'); ?>">List Roles</a></li>
                 <li><a class="nav-link" href="<?php echo get_url('admin/assign_roles.php'); ?>">Assign Roles</a></li>
                 <li><a class="nav-link" href="<?php echo get_url('addProduct.php'); ?>">Add Products</a></li>
+                <li><a class="nav-link" href="<?php echo get_url("shop.php");?>">Shop</a></li>
             <?php endif; ?>
             <?php if (is_logged_in()) : ?>
                 <li><a class="nav-link" href="<?php echo get_url('logout.php'); ?>">Logout</a></li>

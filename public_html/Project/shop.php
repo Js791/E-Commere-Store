@@ -31,7 +31,7 @@ try {
                         Placeholder
                     </div>
                     <?php if (se($item, "image", "", false)) : ?>
-                        <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="...">
+                        <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="..." onclick="location.href='product_details.php?id=<?php se($item, 'id') ;?>'" title="Click for more details!"></img>
                     <?php endif; ?>
 
                     <div class="card-body">

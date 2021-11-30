@@ -10,7 +10,7 @@ if (!has_role("Admin")) {
 $results = [];
 if (isset($_POST["itemName"])) {
     $db = getDB();
-    $stmt = $db->prepare("SELECT name,visibility,category,unit_price,stock FROM Products WHERE(stock>=0 AND visibility>=0) AND (category LIKE :category OR name LIKE :name) LIMIT 10");
+    $stmt = $db->prepare("SELECT name,id,visibility,category,unit_price,stock FROM Products WHERE(stock>=0 AND visibility>=0) AND (category LIKE :category OR name LIKE :name) LIMIT 10");
     try {
         $stmt->execute([":name" => "%" . $_POST["itemName"] . "%",":category" => "%" . $_POST["itemName"] . "%"]);
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -23,7 +23,7 @@ if (isset($_POST["itemName"])) {
 }
 ?>
 <div class="container-fluid">
-    <h1>List Items</h1>
+    <h1>List Products</h1>
     <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
         <div class="input-group mb-3">
             <input class="form-control" type="search" name="itemName" placeholder="Item Filter" />
@@ -50,7 +50,7 @@ if (isset($_POST["itemName"])) {
 
 
                     <td>
-                        <a href="edit_item.php?id=<?php se($record, "id"); ?>">Edit</a>
+                        <a href="edit_items.php?id=<?php se($record, "id"); ?>">Edit</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

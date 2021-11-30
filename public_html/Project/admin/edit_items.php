@@ -8,7 +8,7 @@ if (!has_role("Admin")) {
 }
 //update the item
 if (isset($_POST["submit"])) {
-    if (update_data("Products", $_GET["id"], $_POST)) {
+    if (update_data("Products", $_GET['id'], $_POST)) {
         flash("Updated item", "success");
     }
 }
@@ -21,7 +21,7 @@ $ignore = ["id", "modified", "created"];
 $db = getDB();
 //get the item
 $id = se($_GET, "id", -1, false);
-$stmt = $db->prepare("SELECT * FROM Products where id =:id");
+$stmt = $db->prepare("SELECT * FROM Products WHERE id = :id");
 try {
     $stmt->execute([":id" => $id]);
     $r = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -43,7 +43,7 @@ function mapColumn($col)
 }
 ?>
 <div class="container-fluid">
-    <h1>Edit Item</h1>
+    <h1>Edit Products</h1>
     <form method="POST">
         <?php foreach ($result as $column => $value) : ?>
             <?php /* Lazily ignoring fields via hardcoded array*/ ?>

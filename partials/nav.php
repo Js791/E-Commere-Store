@@ -51,7 +51,7 @@ require_once(__DIR__ . "/../lib/functions.php");
                 <li><a class="nav-link" href="<?php echo get_url('admin/list_roles.php'); ?>">List Roles</a></li>
                 <li><a class="nav-link" href="<?php echo get_url('admin/assign_roles.php'); ?>">Assign Roles</a></li>
                 <li><a class="nav-link" href="<?php echo get_url('addProduct.php'); ?>">Add Products</a></li>
-                <li><a class="nav-link" href="<?php echo get_url("shop.php");?>">Shop</a></li>
+                <li><a class="nav-link" href="<?php echo get_url("admin/list_items.php");?>">List Products</a></li>
             <?php endif; ?>
             <?php if (is_logged_in()) : ?>
                 <li><a class="nav-link" href="<?php echo get_url('logout.php'); ?>">Logout</a></li>

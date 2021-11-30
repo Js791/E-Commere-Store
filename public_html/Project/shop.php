@@ -42,6 +42,9 @@ try {
                         <br>
                         <button onclick=" purchase('<?php se($item, 'id'); ?>')" class="btn btn-primary"> Purchase</button>
                     </div>
+                    <?php if (has_role("Admin")) : ?>
+                        <button onclick="location.href ='admin/edit_items.php?id=<?php se($item, 'id') ;?>'" class="btn btn-primary">Edit</button>
+                    <?php endif; ?>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -57,7 +60,7 @@ if (isset($_POST["search"]) && !empty($_POST["search"])) {
     $sort = se($_GET,"sort","asc",false);
     if(!in_array($sort,["asc","desc"]))
     {
-        $sort = "asc";
+        $sort = "desc";
     }
     $query ="SELECT name,visibility,category,unit_price,stock FROM Products WHERE(stock>0 AND visibility>0) AND (category LIKE :category OR name LIKE :name) ORDER BY unit_price $sort LIMIT 10";
     $stmt = $db->prepare($query);

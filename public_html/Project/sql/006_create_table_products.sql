@@ -1,6 +1,6 @@
     CREATE TABLE IF NOT EXISTS Products
     (
-        id int AUTO_INCREMENT PRIMARY KEY,
+        id int AUTO_INCREMENT,
         name VARCHAR(250) UNIQUE,
         description text,
         category text,
@@ -9,6 +9,7 @@
         image text,
         created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-        visibility BOOLEAN 
+        visibility BOOLEAN
+        PRIMARY KEY (`id`) 
     )
     ---fixed---

@@ -247,43 +247,49 @@ Milestone Features:
      - This should be a separate page from Shop, but will be similar
      - This page should only be accessible to the appropriate role(s)
      <br></br>
-  - [ ] (mm/dd/yyyy of completion) Admin/Shop owner will be able to edit any product
+  - [x] (11/30/2021) Admin/Shop owner will be able to edit any product
     - List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status:Completed 
+    - Direct Link: https://js79-prod.herokuapp.com/Project/admin/edit_items.php?id=1
     - Pull Requests
-       - PR link #1 (repeat as necessary)
+       - https://github.com/Js791/IT202-007/pull/73
     - Screenshots
-       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+       - Screenshots showing a hidden admin page of edit products,and some added edit buttons to admin, along a comparison user vs admin photo
+       - ![Screenshot (110)](https://user-images.githubusercontent.com/90228698/144134754-43d7d816-eb11-4ca2-b3bb-347c92114b92.png)
+       - ![Screenshot (111)](https://user-images.githubusercontent.com/90228698/144134808-1983e2bf-69a4-4e82-bad8-9d0702e7d50e.png)
+       - ![Screenshot (112)](https://user-images.githubusercontent.com/90228698/144134821-0261a736-b42b-41a3-85a6-49eddfb8f269.png)
      <br></br>
      - Edit button should be accessible for the appropriate role(s) anywhere a product is shown (Shop list, Product Details Page, etc)
      <br></br>
-  - [ ] (mm/dd/yyyy of completion) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
+  - [x] (11/30/2021) User will be able to click an item from a list and view a full page with more info about the item (Product Details Page)
     - List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Status:Completed
+    - Direct Link: https://js79-prod.herokuapp.com/Project/shop.php
     - Pull Requests
-       - PR link #1 (repeat as necessary)
+       - https://github.com/Js791/IT202-007/pull/74
     - Screenshots
-       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+       - Screenshots showing product details clickable photo to be redirected to product details page for admin or user, admin can edit on this page.
+       - ![Screenshot (116)](https://user-images.githubusercontent.com/90228698/144147375-18c79784-b93d-41b9-a5f9-51f708f666c9.png)
+       - ![Screenshot (117)](https://user-images.githubusercontent.com/90228698/144147383-1d2077a0-fbda-401a-87ce-510aa969a41b.png)
+       - ![Screenshot (118)](https://user-images.githubusercontent.com/90228698/144147394-37f1ebd4-c9b4-4a87-9438-00040e395938.png)
      <br></br>
-  - [ ] (mm/dd/yyyy of completion) User must be logged in for any Cart related activity below
+  - [x] (11/30/2021) User must be logged in for any Cart related activity below
     - List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Status:Completed
     - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
     - Pull Requests
-       - PR link #1 (repeat as necessary)
+       - https://github.com/Js791/IT202-007/pull/75
     - Screenshots
        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
      <br></br>
   - [ ] (mm/dd/yyyy of completion) User will be able to add items to Cart
     - List of Evidence of Feature Completion
     - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Direct Link: https://js79-prod.herokuapp.com/Project/login.php
     - Pull Requests
        - PR link #1 (repeat as necessary)
     - Screenshots
-       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+       - All screenshots will be below.
      <br></br>
      - <u>Cart</u> will be table-based (id, product_id, user_id, desired_quantity, unit_cost, created, modified)
      - Adding items to Cart will <strong>not</strong> affect the Product's quantity in the Products table

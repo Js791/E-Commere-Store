@@ -29,4 +29,75 @@ body{
     color:orange;
 /*for branch purposesqq*/
 }
+
+.cart-page
+{
+    margin: 80px auto !important;
+}
+
+.cart-table
+{
+    width:100% !important;
+    border-collapse: collapse !important;
+}
+
+.cart-info
+{
+    display:flex !important;
+    flex-wrap:wrap !important;
+}
+
+th
+{
+    text-align: left !important;
+    padding:5px !important;
+    color:black !important;
+    font-weight:bold !important;
+    background:orange!important;
+}
+
+td
+{
+    padding:10px 5px !important;
+}
+
+td input{
+    width:40px !important;
+    height: 30px !important;
+    padding: 5px !important;
+}
+
+.remove-btn {
+    color:red !important;
+    font-size: 12px !important;
+}
+
+.cart-image
+{
+    width:100px !important;
+    height:100px !important;
+    margin-right: 10px !important;
+}
+
+.total-price
+{
+     display:flex !important;
+     justify-content:flex-end !important;
+}
+
+.total-price table
+{
+    border-top: 3px solid orange !important;
+    width:100% !important;
+    max-width: 628px!important;
+}
+
+td:last-child
+{
+    text-align:right !important;
+}
+th:last-child
+{
+    text-align:right !important;
+}
 /*fixed

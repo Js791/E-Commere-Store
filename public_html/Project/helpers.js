@@ -15,3 +15,30 @@ function flash(message = "", color = "info") {
     flash.appendChild(outerDiv);
     //l
 }//profile viewing also something for bootstrapping
+
+function add_item(product_id) 
+{
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = () =>
+    {
+        if(xhttp.readyState ==4)
+        {
+            if(xhttp.status === 200)
+            {
+                let data = JSON.parse(xhttp.responseText);
+                console.log("data recieved",data);
+                flash(data.message,"success");
+            } 
+        }
+    }
+    xhttp.open("POST","api/add_to_cart.php",true);
+    let data = 
+    {
+        product_id:product_id,
+        quantity:1,
+    }
+    let q = Object.keys(data).map(key => key + '=' + data[key]).join('&');
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhttp.send(q);
+}
+

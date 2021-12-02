@@ -3,7 +3,7 @@
         id int AUTO_INCREMENT,
         name VARCHAR(250) UNIQUE,
         description text,
-        category text,
+        category VARCHAR(250) Unique,
         stock int DEFAULT 0,
         unit_price int DEFAULT 99999,
         image text,

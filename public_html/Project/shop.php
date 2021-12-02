@@ -31,7 +31,7 @@ try {
                         Placeholder
                     </div>
                     <?php if (se($item, "image", "", false)) : ?>
-                        <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="..." onclick="location.href='product_details.php?id=<?php se($item, 'id') ;?>'" title="Click for more details!"></img>
+                        <img src="<?php se($item, "image"); ?>" alt="..." onclick="location.href='product_details.php?id=<?php se($item, 'id') ;?>'" title="Click for more details!" class="cart-image"></img>
                     <?php endif; ?>
 
                     <div class="card-body">
@@ -42,6 +42,7 @@ try {
                         Cost: $ <?php se($item, "unit_price"); ?>
                         <br>
                         <button onclick=" purchase('<?php se($item, 'id'); ?>')" class="btn btn-primary"> Purchase</button>
+                        <button onclick="add_item('<?php se($item,'id');?>')" class="btn btn-primary">Add to Cart</button>
                     </div>
                     <?php if (has_role("Admin")) : ?>
                         <button onclick="location.href ='admin/edit_items.php?id=<?php se($item, 'id') ;?>'" class="btn btn-primary">Edit</button>

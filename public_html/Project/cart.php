@@ -10,7 +10,7 @@ if(!is_logged_in())
 
 $results = [];
 $db = getDB();
-$stmt = $db->prepare("SELECT Products.id, name, image, desired_quantity, stock FROM Products JOIN Cart ON Cart.product_id = Products.id WHERE Cart.Users_id = :uid AND stock > 0 AND desired_quantity > 0 AND visibility > 0");
+$stmt = $db->prepare("SELECT Products.id, name, image, desired_quantity, stock,unit_price, (unit_price*desired_quantity) as subtotal FROM Products JOIN Cart ON Cart.product_id = Products.id WHERE Cart.Users_id = :uid AND stock > 0 AND desired_quantity > 0 AND visibility > 0");
 try {
     $stmt->execute([":uid"=>get_user_id()]);
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -40,10 +40,13 @@ catch (PDOException $e)
                             <img src="<?php se($item, "image"); ?>" class="cart-image" alt="..." onclick="location.href='product_details.php?id=<?php se($item, 'id') ;?>'" title="Click for more details!" class="cart-image"></img>
                         <?php endif; ?>
                         <div>
-                            <p><?php se($item,"name")?></p>
-                            <small><?php se($item,"unit_price")?></small>
+                            <p>Product: <?php se($item,"name")?></p>
+                            <small>Price: $<?php se($item,"unit_price")?></small>
+                            <br>
+                            <small>Subtotal:$<?php se($item,"subtotal");?></small>
                             <br>
                             <a class="remove" hre="">Remove</a>
+                            
                         </div>
                     </div>
                 </td>
@@ -57,15 +60,27 @@ catch (PDOException $e)
         <table>
             <tr>
                 <td>Subtotal</td>
-                <td>Price</td>
+                <?php $subtotal=0?>
+                <?php foreach ($results as $item) : ?>
+                    <?php $price = (int)se($item,"unit_price","",false);?>
+                    <?php $quantity = (int)se($item,"desired_quantity","",false);?>
+                    <?php $subtotal+=$price*$quantity;?>
+                <?php endforeach; ?>
+                    <td>$<?php echo($subtotal);?></td>
             </tr>
             <tr>
                 <td>Tax</td>
-                <td>$0.00</td>
+                <td>$0</td>
             </tr>
             <tr>
                 <td>Total</td>
-                <td>Price</td>
+                <?php $subtotal=0?>
+                <?php foreach ($results as $item) : ?>
+                    <?php $price = (int)se($item,"unit_price","",false);?>
+                    <?php $quantity = (int)se($item,"desired_quantity","",false);?>
+                    <?php $subtotal+=$price*$quantity;?>
+                <?php endforeach; ?>
+                <td>$<?php echo($subtotal);?></td>
             </tr>
         </table>
     

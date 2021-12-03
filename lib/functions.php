@@ -165,6 +165,23 @@ function get_columns($table)
     return $results;
 }
 
+function del_data($table,$id)
+{
+    error_log("deleting $id from $table");
+    $db=getDB();
+    $sql="Delete from $table $id =:id";
+    $statement = $db->prepare($sql);
+    $statement->bindParam(':id',$id,PDO::PARAM_INT);
+    if($statement->execute())
+    {
+        flash("You've deleted the product!","success");
+    }
+    else
+    {
+        flash("Failed to delete product","danger");
+    }
+}
+
 
 function save_data($table, $data, $ignore = ["submit"])
 {

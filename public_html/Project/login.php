@@ -74,7 +74,8 @@ $username = se($_POST,"email","",false);
 </script>
 <?php
 //TODO 2: add PHP Code
-if (isset($_POST["email"]) && isset($_POST["password"])) {
+if (isset($_POST["email"]) && isset($_POST["password"])) 
+{
     //get the email key from $_POST, default to "" if not set, and return the value
     $email = se($_POST, "email", "", false);
     //same as above but for password
@@ -119,7 +120,9 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         //Nothing to output here, flash will do it
         //can likely flip the if condition
         //echo "<pre>" . var_export($errors, true) . "</pre>";
-    } else {
+    } 
+    else 
+    {
         //TODO 4
         $db = getDB();
         $stmt = $db->prepare("SELECT id, username, email, password from Users where email = :email or username = :email");

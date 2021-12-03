@@ -1,7 +1,7 @@
 <?php
 //remember, API endpoints should only echo/output precisely what you want returned
 //any other unexpected characters can break the handling of the response
-$response = ["message" => "There was a problem adding your item to cart"];
+$response = ["message" => "Added to Cart"];
 http_response_code(400);
 error_log("req: " . var_export($_POST, true));
 if (isset($_POST["product_id"]) && isset($_POST["quantity"])) {

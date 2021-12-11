@@ -1,6 +1,6 @@
 <?php 
 require(__DIR__."/../../partials/nav.php");
-
+//eee
 if(!is_logged_in())
 {
     flash("You must be logged in to access this page");
@@ -201,7 +201,6 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
     try
     {
         $order_id=$db->lastInsertId();
-        flash("last insert works");
     }
 
     catch(Exception $e)
@@ -212,7 +211,6 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
     try
     {
         $stmt->execute([":uid"=>get_user_id(),":order_id"=>$order_id]);
-        flash("insert into order items succesful");
     }
 
     catch(Exception $e)
@@ -224,7 +222,7 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
     $stmt->execute([":uid"=>get_user_id()]);
     $stmt = $db->prepare("DELETE FROM Cart where Users_id = :uid");
     $stmt->execute([":uid"=>get_user_id()]);
-    redirect("order_details.php");;
+    redirect("order_confirmation.php?id=$order_id");
 }
 ?>
 <?php

@@ -2,7 +2,7 @@
 //for branches
 //note we need to go up 1 more directory
 require(__DIR__ . "/../../../partials/nav.php");
-//o
+//oe
 if (!has_role("Admin")) {
     flash("You don't have permission to view this page", "warning");
     redirect(get_url("home.php"));

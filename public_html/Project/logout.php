@@ -6,4 +6,4 @@ reset_session();
 flash("Successfully logged out", "success");
 redirect("login.php");
 //this is for branching purposes.
-//j
+//je

@@ -10,5 +10,5 @@
         //https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode
         p.innerHTML = bv.outerHTML;//bv.cloneNode(true).outerHTML;
     }
-    bv.remove(); //delete the original
+    bv.remove(); //eee
 </script>

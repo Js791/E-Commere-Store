@@ -1,7 +1,7 @@
 <?php
 //Note: this is to resolve cookie issues with port numbers
 //function for branch purposes
-//
+//eee
 
 $domain = $_SERVER["HTTP_HOST"];
 if (strpos($domain, ":")) {

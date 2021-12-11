@@ -1,5 +1,6 @@
 <?php 
-require(__DIR__."/../../partials/nav.php");
+//ee
+require(__DIR__."/../../partials/nav.php"); //finished
 if(!is_logged_in())
 {
     flash("You must be logged in to access this page");

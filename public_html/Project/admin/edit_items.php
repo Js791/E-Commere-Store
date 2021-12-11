@@ -1,6 +1,6 @@
 <?php
 //for branching
-//note we need to go up 1 more directory
+//note we need to go up 1 more directorye
 require(__DIR__ . "/../../../partials/nav.php");
 
 if (!has_role("Admin")) {

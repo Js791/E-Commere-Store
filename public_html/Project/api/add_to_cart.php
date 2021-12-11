@@ -34,7 +34,7 @@ if (isset($_POST["product_id"]) && isset($_POST["quantity"])) {
         $r = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($r) 
         {
-            $cost = (int)se($r, "cost", 0, false);
+            $cost = (int)se($r, "unit_price", 0, false);
             $name = se($r, "name", "", false);
         }
     }
@@ -46,7 +46,7 @@ if (isset($_POST["product_id"]) && isset($_POST["quantity"])) {
 
         if($valid)
         {
-            add_item($product_id, $user_id, $quantity);
+            add_item($product_id, $user_id, $cost,$quantity); //THIS IS THE CHANGE
             http_response_code(200);
         }
 

@@ -2,7 +2,7 @@
 require_once(__DIR__ . "/../../partials/nav.php");
 if (!has_role("Admin")) {
     flash("You don't have permission to access this page", "danger");
-    die(header("Location: " . $BASE_PATH));
+    redirect("Location: " . $BASE_PATH);
 }
 ?>
 <?php
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo '<meta http-equiv="refresh" content="0;url=#" />';
                 die();
             } else {
-                die(header("Refresh:0"));
+                redirect("Refresh:0");
             }
             
         } catch (PDOException $e) {

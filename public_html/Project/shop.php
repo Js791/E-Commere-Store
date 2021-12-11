@@ -40,8 +40,7 @@ try {
                     </div>
                     <div class="card-footer">
                         Cost: $ <?php se($item, "unit_price"); ?>
-                        <br>
-                        <button onclick=" purchase('<?php se($item, 'id'); ?>')" class="btn btn-primary"> Purchase</button>
+                        <br></br>
                         <button onclick="add_item('<?php se($item,'id');?>')" class="btn btn-primary">Add to Cart</button>
                     </div>
                     <?php if (has_role("Admin")) : ?>

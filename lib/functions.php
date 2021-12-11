@@ -43,7 +43,7 @@ function is_logged_in($redirect = false, $destination = "login.php") //function 
     $isLoggedIn = isset($_SESSION["user"]);
     if ($redirect && !$isLoggedIn) {
         flash("You must be logged in to view this page", "warning");
-        die(header("Location: $destination"));
+       redirect("$destination");
     }
     return $isLoggedIn; //se($_SESSION, "user", false, false);
 }
@@ -262,7 +262,7 @@ function update_data($table, $id,  $data, $ignore = ["id", "submit"])
     }
 }
 
-function add_item($product_id,$user_id,$quantity = 1)
+function add_item($product_id,$user_id,$cost,$quantity = 1)
 {
     //I'm using negative values for predefined items so I can't validate >= 0 for item_id
     if ($user_id <= 0 || $quantity === 0) {
@@ -270,17 +270,34 @@ function add_item($product_id,$user_id,$quantity = 1)
         return;
     }
     $db = getDB();
-    $stmt = $db->prepare("INSERT INTO Cart (product_id, Users_id, desired_quantity) VALUES (:iid, :uid, :q) ON DUPLICATE KEY UPDATE desired_quantity = desired_quantity + :q");
+    $stmt = $db->prepare("INSERT INTO Cart (product_id, Users_id, desired_quantity, unit_cost) VALUES (:iid, :uid, :q, :cost) ON DUPLICATE KEY UPDATE desired_quantity = desired_quantity + :q, unit_cost = :cost");
     try {
         //if using bindValue, all must be bind value, can't split between this an execute assoc array
         $stmt->bindValue(":q", $quantity, PDO::PARAM_INT);
         $stmt->bindValue(":uid", $user_id, PDO::PARAM_INT);
         $stmt->bindValue(":iid", $product_id, PDO::PARAM_INT);
+        $stmt->bindValue(":cost", $cost, PDO::PARAM_INT);
         $stmt->execute();
         return true;
     } catch (PDOException $e) {
         error_log("Error adding $quantity of $product_id" . var_export($e->errorInfo, true));
     }
     return false;
+}
+
+//snippet from my functions.php
+function redirect($path)
+{ //header headache
+    //https://www.php.net/manual/en/function.headers-sent.php#90160
+    /*headers are sent at the end of script execution otherwise they are sent when the buffer reaches it's limit and emptied */
+    if (!headers_sent()) {
+        //php redirect
+        redirect(get_url($path));
+    }
+    //javascript redirect
+    echo "<script>window.location.href='" . get_url($path) . "';</script>";
+    //metadata redirect (runs if javascript is disabled)
+    echo "<noscript><meta http-equiv=\"refresh\" content=\"0;url=" . get_url($path) . "\"/></noscript>";
+    die();
 }
 ?>

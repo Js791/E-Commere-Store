@@ -132,6 +132,7 @@ catch (PDOException $e)
                     <input type="hidden" name="Users_id" value="<?php se($item,"Users_id");?>" class="btn btn-primary" id="td2"/>
                     <td><input type="submit" name="Submit" value="Clear Cart" class="btn btn-primary" id="td3"></input></td>
                 </form>
+                <td><button onclick="location.href='checkout.php'" class="btn btn-primary">Checkout</button></td>
             </tr>
  </table>    
     </div>

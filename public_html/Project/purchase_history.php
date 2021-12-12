@@ -11,7 +11,7 @@ $db = getDB();
 $results = [];
 if(has_role("Admin"))
 {
-    $stmt = $db->prepare("SELECT Orders.created,total_price,payment_method,address,quantity,OrderItems.unit_price,order_id, name,order_id from Orders JOIN OrderItems on Orders.id = OrderItems.order_id JOIN Products on Products.id = OrderItems.product_id ORDER BY Orders.id, OrderItems.id LIMIT 10");
+    $stmt = $db->prepare("SELECT Orders.created,total_price,payment_method,address,quantity,OrderItems.unit_price,order_id, name, u.email from Orders JOIN OrderItems on Orders.id = OrderItems.order_id JOIN Products on Products.id = OrderItems.product_id JOIN Users u on u.id = Orders.user_id ORDER BY Orders.id, OrderItems.id LIMIT 10");
     $stmt->execute();
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if($r)
@@ -22,7 +22,7 @@ if(has_role("Admin"))
 
 else
 {
-    $stmt = $db->prepare("SELECT Orders.created,total_price,payment_method,address,quantity,OrderItems.unit_price,order_id, name from Orders JOIN OrderItems on Orders.id = OrderItems.order_id JOIN Products on Products.id = OrderItems.product_id WHERE OrderItems.user_id = :user_id ORDER BY Orders.id, OrderItems.id LIMIT 10");
+    $stmt = $db->prepare("SELECT Orders.created,total_price,payment_method,address,quantity,OrderItems.unit_price,order_id, name, u.email from Orders JOIN OrderItems on Orders.id = OrderItems.order_id JOIN Products on Products.id = OrderItems.product_id JOIN Users u on u.id = Orders.user_id WHERE Orders.user_id = :user_id ORDER BY Orders.id, OrderItems.id LIMIT 10");
     $stmt->execute([":user_id"=>get_user_id()]);
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if($r)
@@ -59,7 +59,7 @@ else
                                     <tr>
                                         <?php $q=(int)se($item,"quantity","",false)?>
                                         <?php $p=(int)se($item,"unit_price","",false)?>
-                                        <td><?php echo(get_user_email())?></td>
+                                        <td><?php se($item,"email")?></td>
                                         <td> <?php se($item,"order_id")?></td>
                                         <td><?php se($item,"quantity")?></td>
                                         <td>$<?php echo($q*$p)?></td>
@@ -82,7 +82,7 @@ else
                                     <tr>
                                         <?php $q=(int)se($item,"quantity","",false)?>
                                         <?php $p=(int)se($item,"unit_price","",false)?>
-                                        <td><?php echo(get_user_email())?></td>
+                                        <td><?php se($item,"email")?></td>
                                         <td> <?php se($item,"order_id")?></td>
                                         <td><?php se($item,"quantity")?></td>
                                         <td>$<?php echo($q*$p)?></td>

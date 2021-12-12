@@ -1,5 +1,6 @@
 <?php
+require(__DIR__ . "/../../lib/functions.php");
 redirect("login.php");
 //branch purpoes
-//l
+//le
 ?>

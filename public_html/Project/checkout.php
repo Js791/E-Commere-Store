@@ -167,7 +167,7 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
     }
 
     $hasError = false;
-    if($subtotal != $pay)
+    if($subtotal != $pay)//for branching
     {
         flash("you did not enter the correct total amount","danger");
         $hasError = true;
@@ -180,13 +180,13 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
         $hasError = true;
     }
 
-    if($quant > $stock)
+    if($quant > $stock)//for branching
     {
         flash("You asked for $quant $name however only $stock $name is available please update quantity sorry!","danger");
         $hasError = true;
     }
    
-    if($visibile < 1)
+    if($visibile < 1) //for branching
     {
         flash("Sorry this item is no longer available","danger");
         $hasError = true;

@@ -166,63 +166,77 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
          $subtotal+= $price*$quant;
     }
 
+    $hasError = false;
     if($subtotal != $pay)
     {
         flash("you did not enter the correct total amount","danger");
+        $hasError = true;
     }
 
 
     if($p_price != $c_price)
     {
         flash("There has been a price change prices are not same","danger");
+        $hasError = true;
     }
 
     if($quant > $stock)
     {
         flash("You asked for $quant $name however only $stock $name is available please update quantity sorry!","danger");
+        $hasError = true;
     }
    
     if($visibile < 1)
     {
         flash("Sorry this item is no longer available","danger");
+        $hasError = true;
     }
 
-    $stmt= $db->prepare("INSERT INTO Orders(address, user_id, total_price, payment_method) VALUES(:address, :user_id, :total_price, :payment_method)");
-    try
+    if($hasError)
     {
-        $stmt->execute([":user_id"=>get_user_id(),":payment_method"=>$method,":total_price"=>$subtotal,":address"=>$address]);
-        flash("items purchased!","success");
-    }
-    catch (Exception $e)
-    {
-        error_log(var_export($e, true));
+        flash("<pre>" . var_export($errors, true) . "</pre>");
     }
     
-    try
+    else
     {
-        $order_id=$db->lastInsertId();
-    }
+        $stmt= $db->prepare("INSERT INTO Orders(address, user_id, total_price, payment_method) VALUES(:address, :user_id, :total_price, :payment_method)");
+        try
+        {
+            $stmt->execute([":user_id"=>get_user_id(),":payment_method"=>$method,":total_price"=>$subtotal,":address"=>$address]);
+            flash("items purchased!","success");
+        }
+        catch (Exception $e)
+        {
+            error_log(var_export($e, true));
+        }
+    
+        try
+        {
+            $order_id=$db->lastInsertId();
+        }
 
-    catch(Exception $e)
-    {
-        error_log(var_export($e, true));
-    }
-    $stmt=$db->prepare("INSERT INTO OrderItems(product_id, quantity, unit_price, order_id) SELECT product_id, desired_quantity, unit_cost,:order_id FROM Cart JOIN Products on Cart.product_id = Products.id where Users_id = :uid and Products.visibility > 0 AND Cart.desired_quantity <= Products.stock");
-    try
-    {
-        $stmt->execute([":uid"=>get_user_id(),":order_id"=>$order_id]);
-    }
+        catch(Exception $e)
+        {
+            error_log(var_export($e, true));
+        }
+        $stmt=$db->prepare("INSERT INTO OrderItems(product_id, quantity, unit_price, order_id) SELECT product_id, desired_quantity, unit_cost,:order_id FROM Cart JOIN Products on Cart.product_id = Products.id where Users_id = :uid and Products.visibility > 0 AND Cart.desired_quantity <= Products.stock");
+        try
+        {
+            $stmt->execute([":uid"=>get_user_id(),":order_id"=>$order_id]);
+        }
 
-    catch(Exception $e)
-    {
-        error_log(var_export($e, true));
-    }
+        catch(Exception $e)
+        {
+            error_log(var_export($e, true));
+        }
 
-    $stmt= $db->prepare("UPDATE Products set stock = stock - (SELECT desired_quantity FROM Cart where Users_id = :uid AND product_id = Products.id) WHERE visibility > 0 AND Products.id in (SELECT product_id from Cart where Users_id = :uid)");
-    $stmt->execute([":uid"=>get_user_id()]);
-    $stmt = $db->prepare("DELETE FROM Cart where Users_id = :uid");
-    $stmt->execute([":uid"=>get_user_id()]);
-    redirect("order_confirmation.php?id=$order_id");
+        $stmt= $db->prepare("UPDATE Products set stock = stock - (SELECT desired_quantity FROM Cart where Users_id = :uid AND product_id = Products.id) WHERE visibility > 0 AND Products.id in (SELECT product_id from Cart where Users_id = :uid)");
+        $stmt->execute([":uid"=>get_user_id()]);
+        $stmt = $db->prepare("DELETE FROM Cart where Users_id = :uid");
+        $stmt->execute([":uid"=>get_user_id()]);
+        redirect("order_confirmation.php?id=$order_id");
+    }
+    
 }
 ?>
 <?php

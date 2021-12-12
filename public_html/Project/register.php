@@ -1,6 +1,6 @@
 
 <?php
-//k
+//ke
 require(__DIR__ . "/../../partials/nav.php");
 reset_session();
 //User registration branch...second pull request

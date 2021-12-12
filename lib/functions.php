@@ -1,5 +1,5 @@
 <?php 
-//
+//ee
 //user registration branch...second pull request
 require_once(__DIR__ . "/db.php");
 $BASE_PATH = '/Project/'; //This is going to be a helper for redirecting to our base project path since it's nested in another folder
@@ -293,7 +293,7 @@ function redirect($path)
     /*headers are sent at the end of script execution otherwise they are sent when the buffer reaches it's limit and emptied */
     if (!headers_sent()) {
         //php redirect
-        redirect(get_url($path));
+        die(header("Location: " . get_url($path)));
     }
     //javascript redirect
     echo "<script>window.location.href='" . get_url($path) . "';</script>";

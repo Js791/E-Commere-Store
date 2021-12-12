@@ -1,5 +1,5 @@
 <?php
-//note we need to go up 1 more directory
+//note we need to go up 1 more directory e
 require(__DIR__ . "/../../../partials/nav.php");
 
 if (!has_role("Admin")) {

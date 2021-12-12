@@ -1,6 +1,6 @@
 <?php 
 require(__DIR__."/../../partials/nav.php");
-
+//eee
 if(!is_logged_in())
 {
     flash("You must be logged in to access this page");
@@ -191,12 +191,12 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
         flash("Sorry this item is no longer available","danger");
         $hasError = true;
     }
-
-    if($hasError) //conditional for error checking
+  
+     if($hasError)
     {
         //do nothing until errors are fixed
     }
-    else //made sure no errors have passed 
+    else //validation stage passed,all is well
     {
         $stmt= $db->prepare("INSERT INTO Orders(address, user_id, total_price, payment_method) VALUES(:address, :user_id, :total_price, :payment_method)");
         try
@@ -238,6 +238,7 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
         redirect("order_details.php");;
     }
 } 
+
 ?>
 <?php
 require(__DIR__."/../../partials/flash.php");

@@ -194,7 +194,7 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
 
     if($hasError)
     {
-        flash("<pre>" . var_export($errors, true) . "</pre>");
+        //flash("<pre>" . var_export($errors, true) . "</pre>");
     }
     
     else

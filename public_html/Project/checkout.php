@@ -191,13 +191,12 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
         flash("Sorry this item is no longer available","danger");
         $hasError = true;
     }
-
-    if($hasError)
+  
+     if($hasError)
     {
-        //flash("<pre>" . var_export($errors, true) . "</pre>");
+        //do nothing until errors are fixed
     }
-    
-    else
+    else //validation stage passed,all is well
     {
         $stmt= $db->prepare("INSERT INTO Orders(address, user_id, total_price, payment_method) VALUES(:address, :user_id, :total_price, :payment_method)");
         try
@@ -213,16 +212,18 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
         try
         {
             $order_id=$db->lastInsertId();
+            flash("last insert works");
         }
 
         catch(Exception $e)
-        {
+        {   
             error_log(var_export($e, true));
         }
         $stmt=$db->prepare("INSERT INTO OrderItems(product_id, quantity, unit_price, order_id) SELECT product_id, desired_quantity, unit_cost,:order_id FROM Cart JOIN Products on Cart.product_id = Products.id where Users_id = :uid and Products.visibility > 0 AND Cart.desired_quantity <= Products.stock");
         try
         {
             $stmt->execute([":uid"=>get_user_id(),":order_id"=>$order_id]);
+            flash("insert into order items succesful");
         }
 
         catch(Exception $e)
@@ -236,8 +237,8 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
         $stmt->execute([":uid"=>get_user_id()]);
         redirect("order_confirmation.php?id=$order_id");//this need to be changed again
     }
-    
-}
+} 
+
 ?>
 <?php
 require(__DIR__."/../../partials/flash.php");

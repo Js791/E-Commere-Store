@@ -234,7 +234,7 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
         $stmt->execute([":uid"=>get_user_id()]);
         $stmt = $db->prepare("DELETE FROM Cart where Users_id = :uid");
         $stmt->execute([":uid"=>get_user_id()]);
-        redirect("order_confirmation.php?id=$order_id");
+        redirect("order_confirmation.php?id=$order_id");//this need to be changed again
     }
     
 }

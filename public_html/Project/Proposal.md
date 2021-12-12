@@ -340,87 +340,288 @@ Milestone Features:
 
 Milestone Features:
 	Milestone 3
- - [ ] (mm/dd/yyyy of completion) User will be able to purchase items in their Cart 	
-    - List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-       - PR link #1 (repeat as necessary)
-    - Screenshots
-       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-     <br></br>
-    - Create an Orders table (id, user_id, created, total_price, address, payment_method)
-      - [ ] Payment method will simply record (Cash, Visa, MasterCard, Amex, etc) We will not be recording CC numbers or anything of that nature, this is just a sample and in real world projects you’d commonly use a third party payment processor
-      - [ ] Hint: This must be inserted first before you can insert into the OrderItems table
-      <br></br>  
-    - Create an OrderItems table (id, order_id, product_id, quantity, unit_price)
-      - [ ] Hint: This is basically a copy of the data from the Cart table, just persisted as a purchase
-      <br></br>
-    - Checkout Form
-        - [ ] Ask for payment method (Cash, Visa, MasterCard, Amex, etc)
-        - [ ] Do not ask for credit card number, this is just a sample
-        - [ ] Ask for a numerical value to be entered (this will be a fake payment check to compare against the cart total to determine if the payment succeeds)
-        - [ ] Ask for Address/shipping information
-      <br></br>
-    - User will be asked for their Address for shipping purposes
-      - [ ] Address form should validate correctly
-        - Use this as a rough guide (likely you’ll want to prefill some of the data you already have about the user)
-     <br></br>
-     - Order process:
-       - [ ] Calculate Cart Items
-       - [ ] Verify the current product price against the Products table
-         -  Since our Cart is table based it can be long lived so if a user added a Product at a sale and they attempt to purchase afterwards, it should pull the true Product cost.
-         -  You can also show the Cart.unit_price vs Product.unit_price to show a sale or an increase in price
-       <br></br>
-       - [ ] Verify desired product and desired quantity are still available in the Products table
-           - Users can’t purchase more than what’s in stock
-           - Show an error message and prevent order from going through if something isn’t available
-           - Let the user update their cart and try again
-           - Clearly show what the issue is (which product isn’t available, how much quantity is available if the cart exceeds it)
-       <br></br>
-       - [ ] Make an entry into the Orders table
-       - [ ] Get last Order ID from Orders table
-       - [ ] Copy the cart details into the OrderItems tables with the Order ID from the previous step
-       - [ ] Update the Products table Stock for each item to deduct the Ordered Quantity
-       - [ ] Clear out the user’s cart after successful order
-       - [ ] Redirect user to Order Confirmation Page
-       <br></br>
- - [ ] (mm/dd/yyyy of completion) Order Confirmation Page 	
-    - List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-       - PR link #1 (repeat as necessary)
-    - Screenshots
-       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-     <br></br>
-    - Show the entire order details from the Order and OrderItems table (similar to cart)
-    - Displays a Thank you message
-    <br></br>
- - [ ] (mm/dd/yyyy of completion) User will be able to see their Purchase History	
-    - List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-       - PR link #1 (repeat as necessary)
-    - Screenshots
-       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-     <br></br>
-    - For now limit to 10 most recent orders
-    - A list item can be clicked to view the full details in the Order Details Page (similar to Order Confirmation Page except no “Thank you” message)
-    <br></br>
- - [ ] (mm/dd/yyyy of completion) Store Owner will be able to see all Purchase History	
-    - List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-       - PR link #1 (repeat as necessary)
-    - Screenshots
-       - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-     <br></br>
-    - For now limit to 10 most recent orders
-    - A list item can be clicked to view the full details in the Order Details Page (similar to Order Confirmation Page except no “Thank you” message)
-    <br></br> 
+	
+<table>
+<tr><td>milestone 3</td></tr><tr><td>
+<table>
+<tr><td>F1 - User will be able to purchase items in their Cart (2021-12-10)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/cart.php](https://js79-prod.herokuapp.com/Project/cart.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/82](https://github.com/Js791/IT202-007/pull/82)</p><p>
+
+ [https://github.com/Js791/IT202-007/pull/89](https://github.com/Js791/IT202-007/pull/89)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F1 - Create an Orders table (id, user_id, created, total_price, address, payment_method)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145724934-634f2184-d702-46ac-a27a-afbcb282f785.png">
+<p>a screenshot showing orders table</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F1 - Create an OrderItems table (id, order_id, product_id, quantity, unit_price)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145724968-418adbc8-7491-44ff-b889-6dc76125ce59.png">
+<p>a screenshot showing order items table.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F1 - Checkout Form</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145725022-f9040a1f-d518-43bb-af26-ce7686dd6041.png">
+<p>a screenshot showing a form in which the user is redirected to checkout form when the checkout button is clicked on the cart page.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F1 - User will be asked for their Address for shipping purposes</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145725022-f9040a1f-d518-43bb-af26-ce7686dd6041.png">
+<p>the same screenshot as before since all shipping information is asked for right after the checkout button is clicked, eventually leading to purchase history page</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F1 - Order process:</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145725378-2cc9f62c-aeb4-4093-96c8-c3d1a5be773d.png">
+<p>verification that the price in the products table is consistent with the price in our cart</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145725379-a267bd1d-7f4a-404c-83b5-32e14bce3b7a.png">
+<p>verification that the price in the products table is consistent with the price in our cart</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145725381-e824e5cc-20f3-47be-951f-e2df4f8ed862.png">
+<p>verification that the price in the products table is consistent with the price in our cart</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145725522-aa55d9bd-c55c-40ce-8de5-4e8123ec71b8.png">
+<p>verification that the stock in the products table is consistent with the desired quantity in our cart, the query that made this possible is the same as the query from the screenshots above</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src=" ![Screenshot](https://user-images.githubusercontent.com/90228698/145726930-deb11cf6-6a7a-483b-84ac-3fe16e208982.pn">
+<p>a screenshot showing what happens if the user selects a quantity that stock cannot supply, does not submit checkout form and allows user to return to cart to update the quantity all done with a message</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145727720-ead31ce5-e674-471e-aaa0-677f8ed29ba7.png">
+<p>evidence of code showing:
+Make an entry into the Orders table
+Get last Order ID from the Orders table
+Copy the cart details into the OrderItems tables with the Order ID from the previous step
+Update the Products table Stock for each item to deduct the Ordered Quantity
+Clear out the user’s cart after successful order
+Redirect user to Order Confirmation Page
+</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145727719-5ceb9253-958c-40bf-ab59-96b62980c54c.png">
+<p>evidence of code showing:
+Make an entry into the Orders table
+Get last Order ID from the Orders table
+Copy the cart details into the OrderItems tables with the Order ID from the previous step
+Update the Products table Stock for each item to deduct the Ordered Quantity
+Clear out the user’s cart after successful order
+Redirect user to Order Confirmation Page</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145727721-7d848d77-e3d5-4247-9a62-e3ca2673f9e8.png">
+<p>evidence of code showing:
+Make an entry into the Orders table
+Get last Order ID from the Orders table
+Copy the cart details into the OrderItems tables with the Order ID from the previous step
+Update the Products table Stock for each item to deduct the Ordered Quantity
+Clear out the user’s cart after successful order
+Redirect user to Order Confirmation Page</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F2 - Order Confirmation Page (2021-12-11)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/order_confirmation.php](https://js79-prod.herokuapp.com/Project/order_confirmation.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/83/files](https://github.com/Js791/IT202-007/pull/83/files)</p><p>
+
+ [https://github.com/Js791/IT202-007/pull/90/files](https://github.com/Js791/IT202-007/pull/90/files)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F2 - Show the entire order details from the Order and OrderItems table (similar to cart)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145727876-16959f40-9bbd-470f-aa17-8972b88841df.png">
+<p>invoice and thank you message with all details from order items and orders table</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F2 - Displays a Thank you message</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145727876-16959f40-9bbd-470f-aa17-8972b88841df.png">
+<p>thank you message</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F3 - User will be able to see their Purchase History ()</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/purchase_history.php](https://js79-prod.herokuapp.com/Project/purchase_history.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/85/files](https://github.com/Js791/IT202-007/pull/85/files)</p><p>
+
+ [https://github.com/Js791/IT202-007/pull/90/files](https://github.com/Js791/IT202-007/pull/90/files)</p><p>
+
+ [https://github.com/Js791/IT202-007/pull/92/files](https://github.com/Js791/IT202-007/pull/92/files)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F3 - For now limit to 10 most recent orders</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145728190-e4735a5e-92b9-42d9-9791-c6d767290077.png">
+<p>user side shows only user's purchase history, and limit is set to 10 according to code, query couldn't be fully shown there are 2 1 for user's view 1 for admin view</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F3 - A list item can be clicked to view the full details in the Order Details Page (similar to Order Confirmation Page except no “Thank you” message)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145728136-d7c08257-e0e6-4fd2-8890-058765fe288b.png">
+<p>user side shows only user's purchase history</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F4 - Store Owner will be able to see all Purchase History ()</td></tr>
+<tr><td>Status: pending</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/purchase_history.php](https://js79-prod.herokuapp.com/Project/purchase_history.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/85/files](https://github.com/Js791/IT202-007/pull/85/files)</p><p>
+
+ [https://github.com/Js791/IT202-007/pull/90/files](https://github.com/Js791/IT202-007/pull/90/files)</p><p>
+
+ [https://github.com/Js791/IT202-007/pull/92/files](https://github.com/Js791/IT202-007/pull/92/files)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F4 - For now limit to 10 most recent orders</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145728190-e4735a5e-92b9-42d9-9791-c6d767290077.png">
+<p>2 queries depending on who is logged in will get varying results, as for admin it will show all purchases on the e-commerce store.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F4 - A list item can be clicked to view the full details in the Order Details Page (similar to Order Confirmation Page except no “Thank you” message)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/145728324-4a6809ef-553e-4def-b6d5-a52e76572bdb.png">
+<p>admin view of all purchases made on store.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr></td></tr></table>
+
 - Milestone 4
 <table>
 <tr><td>milestone 4</td></tr><tr><td>

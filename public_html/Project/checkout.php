@@ -1,6 +1,6 @@
 <?php 
 require(__DIR__."/../../partials/nav.php");
-
+//eee
 if(!is_logged_in())
 {
     flash("You must be logged in to access this page");
@@ -192,11 +192,11 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
         $hasError = true;
     }
 
-    if($hasError)
+     if($hasError)
     {
         //do nothing until errors are fixed
     }
-    else
+    else //validation stage passed
     {
         $stmt= $db->prepare("INSERT INTO Orders(address, user_id, total_price, payment_method) VALUES(:address, :user_id, :total_price, :payment_method)");
         try

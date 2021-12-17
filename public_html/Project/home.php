@@ -10,7 +10,7 @@ if(is_logged_in(true))
 {
  echo "Welcome home, " . get_username();
  //echo "<pre>" . var_export($_SESSION,true) . "</pre>";
- //changed
+ //changed again
 }
 //l
 

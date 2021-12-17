@@ -63,8 +63,8 @@ if (isset($_POST["search"]) && !empty($_POST["search"])) {
     {
         $sort = "desc";//for branching
     }
-    $query ="SELECT name,visibility,category,unit_price,stock FROM Products WHERE(stock>0 AND visibility>0) AND (category LIKE :category OR name LIKE :name) ORDER BY unit_price $sort LIMIT 10";
-    $stmt = $db->prepare($query);
+    $query ="SELECT name,category,unit_price,stock FROM Products WHERE(stock>0 AND visibility>0) AND (category LIKE :category OR name LIKE :name) ORDER BY unit_price $sort LIMIT 10";
+    $stmt = $db->prepare($query);//changed again
     try {
         //we need to pass the wildcards here with the value, otherwise prepare will ignore them
         $stmt->execute([":name" => "%$search%",":category" => "%$search%"]);

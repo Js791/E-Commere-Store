@@ -13,7 +13,7 @@ if(has_role("Admin"))
 {
     $stmt = $db->prepare("SELECT Orders.created,total_price,payment_method,address,quantity,OrderItems.unit_price,order_id, name, u.email from Orders JOIN OrderItems on Orders.id = OrderItems.order_id JOIN Products on Products.id = OrderItems.product_id JOIN Users u on u.id = Orders.user_id ORDER BY Orders.id, OrderItems.id LIMIT 10");
     $stmt->execute();
-    $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $r = $stmt->fetchAll(PDO::FETCH_ASSOC); //changed again
     if($r)
     {
         $results = $r;
@@ -98,5 +98,6 @@ else
     </div>
 </div>
 <?php
+//fixed all
 require(__DIR__."/../../partials/flash.php");
 ?>

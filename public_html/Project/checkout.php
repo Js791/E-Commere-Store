@@ -133,7 +133,7 @@ if (isset($_POST["please_confirm_total_amount_by_typing_in_total_amount"]))
 {
     $pay = se($_POST, "please_confirm_total_amount_by_typing_in_total_amount", "", false);
     $address = se($_POST, "address", "", false);
-    $method = se($_POST, "payment", "", false);
+    $method = se($_POST, "payment", "", false); //fixed
     $results = [];
     $db = getDB();
     $stmt = $db->prepare("SELECT Products.id, name, image, desired_quantity, stock,unit_price,unit_cost,visibility,(unit_price*desired_quantity) as subtotal FROM Products JOIN Cart ON Cart.product_id = Products.id WHERE Cart.Users_id = :uid AND stock > 0 AND desired_quantity > 0 AND visibility > 0");

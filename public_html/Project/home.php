@@ -9,7 +9,7 @@ require(__DIR__."/../../partials/nav.php");
 if(is_logged_in(true))
 {
  echo "Welcome home, " . get_username();
- echo "<pre>" . var_export($_SESSION,true) . "</pre>";
+ //echo "<pre>" . var_export($_SESSION,true) . "</pre>";
 }
 //l
 

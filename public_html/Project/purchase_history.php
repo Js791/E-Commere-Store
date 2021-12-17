@@ -98,5 +98,6 @@ else
     </div>
 </div>
 <?php
+//fixed all
 require(__DIR__."/../../partials/flash.php");
 ?>

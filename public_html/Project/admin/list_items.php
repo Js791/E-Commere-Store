@@ -22,6 +22,35 @@ if (isset($_POST["itemName"])) {
         flash("<pre>" . var_export($e, true) . "</pre>");
     }
 }
+
+$rtn = [];
+$base_query = "SELECT id, name, description, unit_price,category,stock, image,visibility FROM Products WHERE stock >= 0 AND visibility >= 0";
+$total_query = "SELECT count(1) as total FROM Products";
+$per_page = 10;
+$params = [];
+paginate($total_query, $params, $per_page);
+$db = getDB();
+$stmt = $db->prepare($base_query);
+$query = " LIMIT :offset, :count";
+$params[":offset"] = $offset;
+$params[":count"] = $per_page;
+//get the records
+$stmt = $db->prepare($base_query . $query); //dynamically generated query
+//we'll want to convert this to use bindValue so ensure they're integers so lets map our array
+foreach ($params as $key => $value) {
+    $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+    $stmt->bindValue($key, $value, $type);
+}
+$params = null;
+try {
+    $stmt->execute($params); //dynamically populated params to bind
+    $s = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($s) {
+        $rtn = $s;
+    }
+} catch (PDOException $e) {
+    flash("<pre>" . var_export($e, true) . "</pre>");
+};
 ?>
 <div class="container-fluid">
     <h1>List Products</h1>
@@ -56,7 +85,13 @@ if (isset($_POST["itemName"])) {
                 </tr>
             <?php endforeach; ?>
         </table>
-    <?php endif; ?>
+            <?php endif; ?>
+                <?php if (!$rtn || count($rtn) == 0) : ?>
+                    <p>No results to show</p>
+                <?php else : ?>
+                <?php /* Since I'm just showing data, I'm lazily using my dynamic view example */ ?>
+                <?php include(__DIR__ . "/../../../partials/pagination.php"); ?>
+            <?php endif; ?>
 </div>
 <?php
 //note we need to go up 1 more directory

@@ -1,6 +1,7 @@
 <?php
 //for branching e
 require(__DIR__ . "/../../partials/nav.php");
+
 $results = [];
 $db = getDB();
 $stmt = $db->prepare("SELECT id, name, description, unit_price,category,stock, image,visibility FROM Products WHERE stock > 0 AND visibility > 0 LIMIT 10");
@@ -13,6 +14,28 @@ try {
 } catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre>");
 }
+
+    $rtn = [];
+    $base_query = "SELECT id, name, description, unit_price,category,stock, image,visibility FROM Products WHERE stock > 0 AND visibility > 0";
+    $total_query = "SELECT count(1) as total FROM Products";
+    $per_page = 1;
+    $params = [];
+    paginate($total_query, $params, $per_page);
+    $db = getDB();
+    $stmt = $db->prepare($base_query);
+    $query = " LIMIT :offset, :count";
+    $params[":offset"] = $offset;
+    $params[":count"] = $per_page;
+    //get the records
+    $stmt = $db->prepare($base_query . $query); //dynamically generated query
+    //we'll want to convert this to use bindValue so ensure they're integers so lets map our array
+    foreach ($params as $key => $value) 
+    {
+    $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+    $stmt->bindValue($key, $value, $type);
+    }
+    $stmt->execute();
+    $rtn= $stmt->fetchAll();
 ?>
 <script>
     function purchase(item) {
@@ -89,6 +112,15 @@ if (isset($_POST["search"]) && !empty($_POST["search"])) {
             <?php /* Since I'm just showing data, I'm lazily using my dynamic view example */ ?>
             <?php include(__DIR__ . "/../../partials/dynamic_list.php"); ?>
         <?php endif; ?>
+    </div>
+    <br></br>
+    <div>
+            <?php if (!$rtn || count($rtn) == 0) : ?>
+                <p>No pages to show</p>
+            <?php else : ?>
+                <?php /* Since I'm just showing data, I'm lazily using my dynamic view example */ ?>
+                <?php include(__DIR__ . "/../../partials/pagination.php"); ?>
+            <?php endif; ?>
     </div>
 </div>
 <?php

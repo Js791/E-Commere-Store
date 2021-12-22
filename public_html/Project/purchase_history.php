@@ -24,7 +24,7 @@ if(has_role("Admin"))
     $order = "asc"; //default value, prevent sql injection
     }
     $base_query= "SELECT DISTINCT u.email,oi.order_id,oi.quantity,o.created,o.total_price,u.username FROM Orders o JOIN OrderItems oi on oi.order_id = o.id JOIN Products p on p.id = oi.product_id JOIN Users u on u.id = o.user_id";
-    $total_query="SELECT count(Distinct u.email,oi.order_id,oi.quantity,o.created,o.total_price) as total FROM Orders o JOIN OrderItems oi on oi.order_id = :o.id JOIN Products p on p.id = :oi.product_id JOIN Users u on u.id = :o.user_id ";
+    $total_query="SELECT count(Distinct u.email,oi.order_id,oi.quantity,o.created,o.total_price) as total FROM Orders o JOIN OrderItems oi on oi.order_id = :o.id JOIN Products p on p.id = :oi.product_id JOIN Users u on u.id = :o.user_id";
     $per_page = 10;
     $params = [];
     $query = " WHERE 1=1";

@@ -11,13 +11,70 @@ $db = getDB();
 $results = [];
 if(has_role("Admin"))
 {
-    $stmt = $db->prepare("SELECT Orders.created,total_price,payment_method,address,quantity,OrderItems.unit_price,order_id, name, u.email from Orders JOIN OrderItems on Orders.id = OrderItems.order_id JOIN Products on Products.id = OrderItems.product_id JOIN Users u on u.id = Orders.user_id ORDER BY Orders.id, OrderItems.id LIMIT 10");
-    $stmt->execute();
-    $r = $stmt->fetchAll(PDO::FETCH_ASSOC); //changed again
-    if($r)
+    $col = se($_GET, "col", "total_price", false);
+    //allowed list
+    if (!in_array($col, ["quantity", "total_price", "created"])) 
     {
-        $results = $r;
+        $col = "total_price"; //default value, prevent sql injection
     }
+    $order = se($_GET, "order", "asc", false);
+    //allowed list
+    if (!in_array($order, ["asc", "desc"])) 
+    {
+    $order = "asc"; //default value, prevent sql injection
+    }
+    $base_query= "SELECT DISTINCT u.email,oi.order_id,oi.quantity,o.created,o.total_price,u.username FROM Orders o JOIN OrderItems oi on oi.order_id = o.id JOIN Products p on p.id = oi.product_id JOIN Users u on u.id = o.user_id";
+    $total_query="SELECT count(Distinct u.email,oi.order_id,oi.quantity,o.created,o.total_price) as total FROM Orders o JOIN OrderItems oi on oi.order_id = :o.id JOIN Products p on p.id = :oi.product_id JOIN Users u on u.id = :o.user_id ";
+    $per_page = 10;
+    $params = [];
+    $query = " WHERE 1=1";
+    paginate($total_query, $params, $per_page);
+    $db = getDB();
+    $stmt = $db->prepare($base_query);
+    $name = se($_GET, "name", "", false);
+    if (!empty($name)) {
+        $query .= " AND name like :name";
+        $params[":name"] = "%$name%";
+    }
+    $category = se($_GET, "category", "", false);
+    if (!empty($category)) {
+        $query .= " AND category = :cat";
+        $params[":cat"] = $category;
+    }
+    $date = se($_GET,"Orders.created","",false);
+    if (!empty($date))
+    {
+        $query .= " AND Orders.created >= DATE_SUB(NOW(),INTERVAL 1 $date)";
+        $params[":date"] = $date;
+    }
+    //apply column and order sort
+    if (!empty($col) && !empty($order)) {
+        $query .= " ORDER BY $col $order"; //be sure you trust these values, I validate via the in_array checks above
+    }
+    $query .= " LIMIT :offset, :count";
+    $params[":offset"] = $offset;
+    $params[":count"] = $per_page;
+    paginate($total_query, $params, $per_page);
+    $stmt = $db->prepare($base_query . $query);
+    foreach ($params as $key => $value) 
+    {
+        $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+        $stmt->bindValue($key, $value, $type);
+    }
+    $stmt->execute();
+    $results = $stmt->fetchAll();
+
+    $data = [];
+    $stmt = $db->prepare("SELECT distinct category from Products");
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $d = [];
+    $stmt = $db->prepare("SELECT distinct created from Orders");
+    $stmt->execute();
+    $d = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 }
 
 else
@@ -52,6 +109,12 @@ else
         $query .= " AND category = :cat";
         $params[":cat"] = $category;
     }
+    $date = se($_GET,"Orders.created","",false);
+    if (!empty($date))
+    {
+        $query .= " AND Orders.created >= DATE_SUB(NOW(),INTERVAL 1 $date)";
+        $params[":date"] = $date;
+    }
     //apply column and order sort
     if (!empty($col) && !empty($order)) {
         $query .= " ORDER BY $col $order"; //be sure you trust these values, I validate via the in_array checks above
@@ -59,8 +122,6 @@ else
     $query .= " LIMIT :offset, :count";
     $params[":offset"] = $offset;
     $params[":count"] = $per_page;
-    error_log($base_query . $query);
-    error_log(var_export($params,true));
     $stmt = $db->prepare($base_query . $query);
     foreach ($params as $key => $value) 
     {
@@ -76,10 +137,10 @@ else
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $d = [];
-    $date = se($_GET,"created","",false);
-    $stmt = $db->prepare("SELECT distinct created from Products");
+    $stmt = $db->prepare("SELECT distinct created from Orders");
     $stmt->execute();
     $d = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 }
 
 ?>
@@ -97,16 +158,63 @@ else
                 <div class="mt-3">
                     <div class="table-responsive" id="blk3">
                         <?php if(has_role("Admin")): ?>
-                            <table class="table">
-                                <thead>
-                                  <tr>
-                                        <th>User</th>
-                                        <th>Order ID</th>
-                                        <th>Total Number of Items</th>
-                                        <th>Total Spent</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                            <form onsubmit=true method="GET">
+                                <table class="table">
+                                    <thead>
+                                        <input class="btn btn-primary" type="submit" value="Sort" name="sort"/>&nbsp;
+                                        <select name="col" id="sort">
+                                            <option value="created">sort by date</option>
+                                            <option value="quantity">sort by total items</option>
+                                            <option value="order_id">sort by order ID</option>
+                                            <option value="total_price"> sort by total price</option>
+                                        </select>
+                                        <br></br>
+                                        <select class="form-control" name="order" value="<?php se($order)?>">
+                                            <option value="asc">Low to high</option>
+                                            <option value="desc">High to low</option>
+                                        </select>
+                                        <br></br>
+                                        <input class="btn btn-primary" type="submit" value="Filter" name="filter"/>&nbsp;
+                                        <select name="category">
+                                            <?php foreach($data as $item) : ?>
+                                                <?php $v =  trim(array_values($item)[0]); ?>
+                                                <option value="<?php se($v, "category");?>"><?php se(str_replace("_", " ", $v)); ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        &nbsp;<input class="btn btn-primary" type="submit" value="Filter" name="filter"/>&nbsp;
+                                        <label for="created">Search by Purchase Date:</label>  
+                                            <select name="created" id="created">
+                                                <option value="select">select</option>
+                                                <option value="day">Past Day</option>
+                                                <option value="week">Past Week</option>
+                                                <option value="month">Past Month</option>
+                                            </select>
+                                        <script>
+                                            document.forms[0].order.value = "<?php se($order); ?>";
+                                        </script>
+                                        <br></br>
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Order ID</th>
+                                            <th>Total Number of Items</th>
+                                            <th>Date of Purchase</th>
+                                            <th>Total Spent</th>
+                                        </tr>
+                                    </thead>
+                                    <?php $counter = 0;?>
+                                    <?php foreach($results as $item) : ?>
+                                        <tr>
+                                            <td><?php se($item,"username")?></td>
+                                            <td> <?php se($item,"order_id")?></td>
+                                            <td><?php se($item,"quantity")?></td>
+                                            <td><?php se($item,"created");?></td>
+                                            <td>$<?php se($item,"total_price");?></td>
+                                            <?php $money = se($item,"total_price","",false);?>
+                                            <?php $counter+=$money;?>
+                                        </tr>
+                                    <?php endforeach ; ?>
+                                    <h2 class ="text-uppercase">Overall Spent $<?php echo($counter);?></h2>
+                                    <tbody>
                                     <?php if (!$results || count($results) == 0) : ?>
                                          <p>No purchase history to show</p>
                                      <?php else : ?>
@@ -114,7 +222,8 @@ else
                                         <?php include(__DIR__ . "/../../partials/pagination.php"); ?>
                                     <?php endif; ?>
                                  </tbody>
-                            </table>
+                            </form>
+                                </table>
                         <?php else :?>
                             <form onsubmit=true method="GET">
                                 <table class="table">
@@ -136,6 +245,13 @@ else
                                             <?php foreach($data as $item) : ?>
                                                 <?php $v =  trim(array_values($item)[0]); ?>
                                                 <option value="<?php se($v, "category");?>"><?php se(str_replace("_", " ", $v)); ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        &nbsp;<input class="btn btn-primary" type="submit" value="Filter" name="filter"/>&nbsp;
+                                        <select name="Orders.created">
+                                            <?php foreach($d as $item) : ?>
+                                                <?php $v =  trim(array_values($item)[0]); ?>
+                                                <option value="<?php se($v, "created");?>"><?php se(str_replace("_", " ", $v)); ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     <script>
@@ -162,7 +278,6 @@ else
                                             <td>$<?php echo($q*$p)?></td>
                                         </tr>
                                     <?php endforeach ; ?>
-                                </tbody>
                             </table>
                             <?php if (!$results || count($results) == 0) : ?>
                                 <p>No matches to show</p>

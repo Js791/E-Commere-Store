@@ -15,27 +15,31 @@ try {
     flash("<pre>" . var_export($e, true) . "</pre>");
 }
 
-    $rtn = [];
-    $base_query = "SELECT id, name, description, unit_price,category,stock, image,visibility FROM Products WHERE stock > 0 AND visibility > 0";
-    $total_query = "SELECT count(1) as total FROM Products";
-    $per_page = 1;
-    $params = [];
-    paginate($total_query, $params, $per_page);
-    $db = getDB();
-    $stmt = $db->prepare($base_query);
-    $query = " LIMIT :offset, :count";
-    $params[":offset"] = $offset;
-    $params[":count"] = $per_page;
-    //get the records
-    $stmt = $db->prepare($base_query . $query); //dynamically generated query
-    //we'll want to convert this to use bindValue so ensure they're integers so lets map our array
-    foreach ($params as $key => $value) 
-    {
+$rtn = [];
+$base_query = "SELECT id, name, description, unit_price,category,stock, image,visibility FROM Products";
+$total_query = "SELECT count(1) as total FROM Products";
+$per_page = 1;
+$params = [];
+$query=" Where 1=1";
+paginate($total_query, $params, $per_page);
+$db = getDB();
+$stmt = $db->prepare($base_query);
+$query .= " LIMIT :offset, :count";
+$params[":offset"] = $offset;
+$params[":count"] = $per_page;
+//get the records
+$stmt = $db->prepare($base_query . $query); //dynamically generated query
+//we'll want to convert this to use bindValue so ensure they're integers so lets map our array
+foreach ($params as $key => $value) {
     $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
     $stmt->bindValue($key, $value, $type);
-    }
-    $stmt->execute();
-    $rtn= $stmt->fetchAll();
+}
+$stmt->execute();
+$rtn = $stmt->fetchAll();
+
+
+
+
 ?>
 <script>
     function purchase(item) {

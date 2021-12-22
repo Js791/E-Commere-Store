@@ -36,7 +36,7 @@ $stmt = $db->prepare("SELECT AVG(rating) as average FROM Rating as rate");
 $stmt->execute();
 $rtn=$stmt->fetch(PDO::FETCH_ASSOC);
 
-$base_query = "SELECT rating, comments, username FROM Rating JOIN Users on Rating.user_id = Users.id WHERE product_id = :pid";
+$base_query = "SELECT rating, comments, username,user_id FROM Rating JOIN Users on Rating.user_id = Users.id WHERE product_id = :pid";
 $total_query = "SELECT count(1) as total FROM Rating WHERE product_id = :pid";
 $per_page = 10;
 $params = [":pid"=>$product_id];
@@ -55,6 +55,7 @@ foreach ($params as $key => $value) {
 }
 $stmt->execute();
 $ratings = $stmt->fetchAll();
+$user_id = se($_GET,"id",get_user_id(),false);
 ?>
 
 <div class="row">
@@ -96,10 +97,12 @@ $ratings = $stmt->fetchAll();
     <?php foreach ($ratings as $item) : ?>
         <table width="50%">
             <tr>
+                <th>User</th>
                 <th>Product Rating</th>
                 <th>Product Comments</th>
             </tr>
             <tr>
+                <td><a href="profile.php?id=<?php se($item, 'user_id');?>"><?php echo(se($item,"username"));?></a></td>
                 <td><?php echo(se($item,"rating"));?></td>
                 <td><?php echo(se($item,"comments"));?></td>
             </tr>

@@ -623,22 +623,38 @@ Redirect user to Order Confirmation Page</p>
 </tr></td></tr></table>
 
 - Milestone 4
+
+
 <table>
 <tr><td>milestone 4</td></tr><tr><td>
 <table>
 <tr><td>F1 - User can set their profile to be public or private (will need another column in Users table) ()</td></tr>
-<tr><td>Status: pending</td></tr>
-<tr><td>Links:</td></tr>
-<tr><td>PRs:</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/product_details.php?id=1](https://js79-prod.herokuapp.com/Project/product_details.php?id=1)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/94](https://github.com/Js791/IT202-007/pull/94)</p></td></tr>
 <tr><td>
 <table>
 <tr><td>F1 - If public, hide email address from other users</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147042845-816100c1-be77-473f-81d4-d1df0691544a.png">
+<p>this screenshot shows if a user is public it will only display the username and when they joined</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147043096-c8141d56-cff2-4de9-906c-7044e983a931.png">
+<p>this screenshot shows if they are private</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147043202-be31cff2-b11e-4153-b71c-b840a34f6af2.png">
+<p>this is a generic view of one's own profile</p>
 </td></tr>
 
 </td>
@@ -648,18 +664,22 @@ Redirect user to Order Confirmation Page</p>
 </tr>
 <table>
 <tr><td>F2 - User will be able to rate a product they purchased ()</td></tr>
-<tr><td>Status: pending</td></tr>
-<tr><td>Links:</td></tr>
-<tr><td>PRs:</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/product_details.php?id=1&page=2](https://js79-prod.herokuapp.com/Project/product_details.php?id=1&page=2)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/95](https://github.com/Js791/IT202-007/pull/95)</p></td></tr>
 <tr><td>
 <table>
 <tr><td>F2 - Create table called Ratings (id, product_id, user_id, rating, comment, created)</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147043509-1756eadc-4dd5-4a66-96cb-8fb1e223fd45.png">
+<p>a table called ratings</p>
 </td></tr>
 
 </td>
@@ -671,11 +691,11 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F2 - 1-5 rating</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147043587-ab06a1e7-1a16-474a-8eac-bf5791b7cbee.png">
+<p>a dropdown allowing a 1-5 rating</p>
 </td></tr>
 
 </td>
@@ -687,11 +707,11 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F2 - Text Comment (use TEXT data type in sql)</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147043725-f7e53c06-30ff-4766-8848-a6b83115ad60.png">
+<p>a table with TEXT</p>
 </td></tr>
 
 </td>
@@ -703,11 +723,11 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F2 - Must be done on the Product Details Page</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147043809-23537071-206a-409e-a475-1a09a555f8d7.png">
+<p>all work done on the product details page</p>
 </td></tr>
 
 </td>
@@ -719,15 +739,15 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F2 - Ratings and Rating Comments will be visible on the Product Details page</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p>Show the latest 10 reviews</p>
+<img width="768px" src="![Screenshot](https://user-images.githubusercontent.com/90228698/147043938-953aef80-4ff4-4842-97f6-235af3baad66.png">
+<p>Show the latest 10 reviews, not fully shown in this photo more in next photo</p>
 </td></tr>
 
 <tr><td>
-<img width="768px" src="">
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147044006-1ab43390-89ce-4a4b-abd8-f2ab574727af.png">
 <p>Paginate anything beyond 10</p>
 </td></tr>
 
@@ -740,11 +760,11 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F2 - Show the average rating on the Product Details Page</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147044161-84bca8da-3edd-4e41-aad9-7966fe237e95.png">
+<p>average rating shown up top</p>
 </td></tr>
 
 </td>
@@ -754,18 +774,22 @@ Redirect user to Order Confirmation Page</p>
 </tr>
 <table>
 <tr><td>F3 - User’s Purchase History Changes ()</td></tr>
-<tr><td>Status: pending</td></tr>
-<tr><td>Links:</td></tr>
-<tr><td>PRs:</td></tr>
+<tr><td>Status: incomplete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/purchase_history.php](https://js79-prod.herokuapp.com/Project/purchase_history.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/95](https://github.com/Js791/IT202-007/pull/95)</p></td></tr>
 <tr><td>
 <table>
 <tr><td>F3 - Filter by date range</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/ff0000/000000?text=incomplete"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147044547-c8997c57-692c-41d1-8db0-b9f0e045375e.png">
+<p>This one I could not get to work I tried getting from the Orders table to get the dates and then use filtering, I had a hard time understanding how to actually implement a range using between then getting the correct interval.</p>
 </td></tr>
 
 </td>
@@ -777,11 +801,17 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F3 - Filter by category</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147044898-b077380c-d900-4fa0-b94c-d7659aa27b5f.png">
+<p>filtering by category shown in screenshot before when household is selected</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147044893-d9d87702-a1c1-4088-890b-8330ec250b1f.png">
+<p>filtering by category in screenshot after when towel is selected
+</p>
 </td></tr>
 
 </td>
@@ -793,11 +823,16 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F3 - Sort by total, date purchased, etc</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147045410-58db637c-3957-433a-bc6e-6225e9b9f649.png">
+<p>some sorting capabilities first one before low to high by total order items</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147045550-5ab818df-5c68-4c5d-9ee8-21aa646de210.png">
+<p>then showing high to low by the total number of items</p>
 </td></tr>
 
 </td>
@@ -809,11 +844,11 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F3 - Add pagination</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/ff0000/000000?text=incomplete"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p>Any filter/sort applied must be followed during the pagination process
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147045802-d45c50a8-56b3-469d-897e-b552c9acccb3.png">
+<p>Any filter/sort applied must be followed during the pagination process, I was not able to get this one to work the queries weren't working as expected resulting in a lot of difficulty attempting to get the pages to paginate, the code logic is there but the pagination does not work.
 </p>
 </td></tr>
 
@@ -824,18 +859,22 @@ Redirect user to Order Confirmation Page</p>
 </tr>
 <table>
 <tr><td>F4 - Store Owner Purchase History Changes ()</td></tr>
-<tr><td>Status: pending</td></tr>
-<tr><td>Links:</td></tr>
-<tr><td>PRs:</td></tr>
+<tr><td>Status: incomplete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/purchase_history.php](https://js79-prod.herokuapp.com/Project/purchase_history.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/97/files](https://github.com/Js791/IT202-007/pull/97/files)</p></td></tr>
 <tr><td>
 <table>
 <tr><td>F4 - Filter by Date Range</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/ff0000/000000?text=incomplete"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147046306-8e44b113-6bf8-45ec-8922-a5a89d4542ce.png">
+<p>I was not able to get this one to work with pagination, also pagination messed up some of my code, ultimately couldn't determine how to fix.</p>
 </td></tr>
 
 </td>
@@ -847,11 +886,16 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F4 - Filter by Category</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147046414-ca564e21-e896-4a34-9078-986bab14270a.png">
+<p>filter by category before</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147046419-2bbdbf2b-cb2b-4b3f-addd-8f7a7462533c.png">
+<p>filter by category after</p>
 </td></tr>
 
 </td>
@@ -863,11 +907,16 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F4 - Sort by total, date purchased, etc</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147047574-820782d5-ff9c-455a-be91-09d41c741ef1.png">
+<p>some sorting capabilities I will show high to low sort by total items</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147047613-10596121-a328-421c-aee9-36b307d6e597.png">
+<p>sort by total items low to high</p>
 </td></tr>
 
 </td>
@@ -879,11 +928,12 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F4 - Add pagination</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/ff0000/000000?text=incomplete"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p>Any filter/sort applied must be followed during the pagination process</p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147047807-f5359f6a-b93d-401e-bf1e-d2e55ad64e99.png">
+<p>Any filter/sort applied must be followed during the pagination process
+I was not able to paginate this correctly similarly to before incomplete parts, code logic is there but doesn't function properly.</p>
 </td></tr>
 
 </td>
@@ -895,11 +945,16 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F4 - The result page should show the accurate total price of the combined search results (i.e., if just 3 records show each of $25, it should show $75 total for this view)</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147048042-eb9d20a1-a549-4732-9085-adb3e02eb5e3.png">
+<p>this one is partially completed as it does get different overall amounts,this is one amount.</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147048085-b2e4aca7-18e6-46c5-b87a-a402ba768688.png">
+<p>this is another amount.</p>
 </td></tr>
 
 </td>
@@ -909,18 +964,27 @@ Redirect user to Order Confirmation Page</p>
 </tr>
 <table>
 <tr><td>F5 - Add pagination to Shop Page (and any other product lists not yet mentioned) ()</td></tr>
-<tr><td>Status: pending</td></tr>
-<tr><td>Links:</td></tr>
-<tr><td>PRs:</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/admin/list_items.php?itemName=&stock=](https://js79-prod.herokuapp.com/Project/admin/list_items.php?itemName=&stock=)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/98](https://github.com/Js791/IT202-007/pull/98)</p></td></tr>
 <tr><td>
 <table>
-<tr><td>F5 - item 1</td></tr>
+<tr><td>F5 - proof of pagination of list items for products</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147048693-34fb46cc-c7de-4b74-b42a-45f658b2c046.png">
+<p>this is proof for list items, showing the pagination</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147048700-5110acd0-a252-430e-ad63-5314182d8f14.png">
+<p>another page of list items</p>
 </td></tr>
 
 </td>
@@ -930,18 +994,22 @@ Redirect user to Order Confirmation Page</p>
 </tr>
 <table>
 <tr><td>F6 - Store Owner will be able to see all products out of stock ()</td></tr>
-<tr><td>Status: pending</td></tr>
-<tr><td>Links:</td></tr>
-<tr><td>PRs:</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/admin/list_items.php?itemName=test&stock=0](https://js79-prod.herokuapp.com/Project/admin/list_items.php?itemName=test&stock=0)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/99/files](https://github.com/Js791/IT202-007/pull/99/files)</p></td></tr>
 <tr><td>
 <table>
 <tr><td>F6 - This will be added as a filter to their product list page from Milestone 2</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147049130-1c4b8765-23d5-410c-a578-c0f50b97cf4f.png">
+<p>a page showing item name/category filter along with a stock filter for admin</p>
 </td></tr>
 
 </td>
@@ -953,11 +1021,11 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F6 - Pagination should account for this new filter</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147049488-37b436b4-65bf-43d9-b2c3-3da0af846d4d.png">
+<p>paginated filter for stock</p>
 </td></tr>
 
 </td>
@@ -969,11 +1037,11 @@ Redirect user to Order Confirmation Page</p>
 <table>
 <tr><td>F6 - Recommended to have the filter applied as a given value (i.e., where quantity is <= value)</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147049443-de7b8024-1abe-46fb-bd24-d26ad23bca49.png">
+<p>a zero stock filter pulling the item up</p>
 </td></tr>
 
 </td>
@@ -983,18 +1051,22 @@ Redirect user to Order Confirmation Page</p>
 </tr>
 <table>
 <tr><td>F7 - User can sort products by average rating on the Shop Page ()</td></tr>
-<tr><td>Status: pending</td></tr>
-<tr><td>Links:</td></tr>
-<tr><td>PRs:</td></tr>
+<tr><td>Status: incomplete</td></tr>
+<tr><td>Links:<p>
+
+ [https://js79-prod.herokuapp.com/Project/shop.php](https://js79-prod.herokuapp.com/Project/shop.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/Js791/IT202-007/pull/100](https://github.com/Js791/IT202-007/pull/100)</p></td></tr>
 <tr><td>
 <table>
 <tr><td>F7 - Hint: may want to add an “average rating” field to the Products table and update this value any time a new rating is given for the product</td></tr>
 <tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/808080/ffffff?text=pending"></td></tr>
+<img width="100" height="20" src="https://via.placeholder.com/400x120/ff0000/000000?text=incomplete"></td></tr>
 
 <tr><td>
-<img width="768px" src="">
-<p></p>
+<img width="768px" src="https://user-images.githubusercontent.com/90228698/147049635-ca7080f5-e116-4ee3-8569-0a54f40a30cc.png">
+<p>I was not able to implement this my pagination for the shop page wasn't working, so I was not able to use get and make a query to get from the ratings table to insert and update into products table to be able to sort by average rating</p>
 </td></tr>
 
 </td>
@@ -1002,6 +1074,23 @@ Redirect user to Order Confirmation Page</p>
 </table>
 </td>
 </tr></td></tr></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Intructions
 #### Don't delete this
 1. Pick one project type

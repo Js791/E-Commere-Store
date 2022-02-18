@@ -1,9 +1,4 @@
-# Heroku Setup
-
-- 08/30/2021 removed .htaccess and updated Procfile to use public_html as docroot
-- Profile tells Heroku how to deploy
-- Composer.json mentions what libraries will be used 
-- public_html contains all public facing content
-- partials will be templates/partial pages that will NOT be accessed directly (still can reference via code)
-- lib will be custom functions/libraries/etc that will NOT be accessed directly (still can be referenced via code)
-- All work will be subfolders inside public_html (for the most part), lib will contain reusable functionality, partials will contain reusable templates, nothing else should change.
+# Simple Shop
+- IT course at university, creating a simple shop utilizing php,javascript,css,html,bootstrap,Ajax,SQL and bootstrap.
+- Mostly Complete, final branch with most up to date work is Milestone4-part7
+- Incomplete Componets are: Pagination on purchase history for admin and user view, sorting by order id on purchase history on admin and user view, filter by date on purchase history for admin and user view.
